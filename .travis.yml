@@ -6,15 +6,10 @@ cache: yarn
 branches:
   only:
   - master
-notifications:
-  email: false
-  slack:
-    on_success: always
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: ./
   on:
     branch: master
