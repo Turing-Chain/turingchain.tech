@@ -1,0 +1,333 @@
+/*----------- reset start -----------*/
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+input, button, textarea, select, optgroup, option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  border: 0;
+}
+
+table, tbody {
+  display: block;
+}
+
+
+/*purpose To enable resizing for IE */
+/*branch For IE6-Win, IE7-Win */
+input, button, textarea, select {
+
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+:link, :visited, ins {
+  text-decoration: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/*HTML5 tag*/
+section, article, aside, footer, header, nav, main {
+  display: block;
+}
+
+a, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  display: block;
+}
+
+*:focus, a:focus {
+  outline: none;
+}
+
+
+html {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.1em;
+}
+
+button {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.fixed {
+  overflow: hidden;
+}
+body.fixed {
+  overflow: hidden;
+}
+
+
+// <!-- Raleway字體 -->
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptsg8zYS_SKggPNwE44Q4FqL_KWxWMT.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptsg8zYS_SKggPNwE44TYFqL_KWxQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwIouWqhPANqczVsq4A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwIouWqZPANqczVs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// total icons var
+$totalIcon:11;
+$home-icon:0;
+$facebook-icon:1;
+$google-icon:2;
+$github-icon:3;
+$medium-icon:4;
+$linkedin-icon:5;
+$bitcoin-icon:6;
+$book-icon:7;
+$graduation-icon:8;
+$email-icon:9;
+$shield-icon:10;
+$database-icon:11;
+
+// portfolio var
+$P-totalPorfolio: 3;
+$P-selfToken-pic:0;
+$P-blackbirdAi-pic:1;
+$P-VMFive-pic:2;
+$P-HongYingClub-pic:3;
+
+// research var
+$R-researchtotalImg:11;
+$R-tsskit-img:0;
+$R-SCH-img:1;
+$R-ecouponEcosystem-img:2;
+$R-ox1Academy-img:3;
+$R-RRR-img:4;
+$R-atomicSwap-img:5;
+$R-cryptoBeauty-img:6;
+$R-dragonGatePoker-img:7;
+$R-slefToken-img:8;
+$R-blackbirdAi-img:9;
+$R-AMLKYC-img:10;
+$R-SCV-img:11;
+
+$R-researchtotalIcon:45;
+$R-binance-icon:0;
+$R-gitcoin-icon:1;
+$R-ethereal-icon:2;
+$R-ieee-icon:3;
+$R-HITC-icon:4;
+$R-todohacker-icon:5;
+$R-dexon-icon:6;
+$R-bithub-icon:7;
+$R-alysida-icon:8;
+$R-ITRI-icon:9;
+$R-III-icon:10;
+$R-NARlabs-icon:11;
+$R-berkeley-icon:12;
+$R-THKUOSAT-icon:13;
+$R-NTU-icon:14;
+$R-taipeiTech-icon:15;
+$R-NTUOB-icon:16;
+$R-JPMorgan-icon:17;
+$R-htc-icon:18;
+$R-TUOC-icon:19;
+$R-selfToken-icon:20;
+$R-ethereum-icon:21;
+$R-consensys-icon:22;
+$R-liquality-icon:23;
+$R-tron-icon:24;
+$R-trustCaffe-icon:25;
+$R-EOS-icon:26;
+$R-meetOne-icon:27;
+$R-slowMist-icon:28;
+$R-wmfive-icon:29;
+$R-acxel-icon:30;
+$R-EOSTaipei-icon:31;
+$R-trustWallet-icon:32;
+$R-accupass-icon:33;
+$R-bytepay-icon:34;
+$R-bitRabbit-icon:35;
+$R-IMTTR-icon:36;
+$R-IBM-icon:37;
+$R-AWGgovCloud-icon:38;
+$R-wolfram-icon:39;
+$R-shanghaiCBank-icon:40;
+$R-BankOfshanghai-icon:41;
+$R-HKMA-icon:42;
+$R-shanghaisave-icon:43;
+$R-cyberport-icon:44;
+$R-hackernoon-icon:45;
+// flag
+$R-germany-flag:0;
+$R-korea-flag:1;
+$R-hongKong-flag:2;
+$R-USA-flag:3;
+$R-china-flag:4;
+
+// team var
+$T-totalTeamMember:10;
+$T-jeff-hu:0;
+$T-tina-lee:1;
+$T-ken-wong:2;
+$T-martin-shin:3;
+$T-andrew-goa:4;
+$T-matthew-liu:5;
+$T-chen-po:6;
+$T-tom-lam:7;
+$T-jc-ko:8;
+$T-pan-hui:9;
+$T-roger-wu:10;
+
+// partnership var
+$PS-totalPS:39;
+$PS-1-0x1Academy:0;
+$PS-1-blockchainEN:1;
+$PS-1-hahow:2;
+$PS-1-hackerNoon:3;
+$PS-1-tibaMe:4;
+$PS-1-xMag:5;
+$PS-1-BlockTempo:6;
+$PS-1-ETNet:7;
+$PS-1-HITCON:8;
+$PS-1-cyberportHK:9;
+$PS-1-MITTechnologyReview:10;
+$PS-1-TaipeiEthereumMeetup:11;
+$PS-1-todoHacker:12;
+$PS-1-bithub:13;
+$PS-1-trustCaffe:14;
+$PS-1-UPTOWNSeoul:15;
+$PS-1-UPTOWNHK:16;
+$PS-1-acer:17;
+$PS-1-AWSGovCloud:18;
+$PS-1-htc:19;
+$PS-1-ibm:20;
+$PS-1-ieee:21;
+$PS-1-accupass:22;
+$PS-1-acxel:23;
+$PS-1-consenSys:24;
+$PS-1-DEXON:25;
+$PS-1-EOS:26;
+$PS-1-EthereumFoundation:27;
+$PS-1-Flowchain:28;
+$PS-1-Gitcoin:29;
+$PS-1-KeyXentic:30;
+$PS-1-Liquality:31;
+$PS-1-SlowMist:32;
+$PS-1-TronNetwork:33;
+$PS-1-VMFIVE:34;
+$PS-1-Alysida:35;
+$PS-1-AnChain:36;
+$PS-1-BlackbirdAI:37;
+$PS-1-EOSTaipei:38;
+$PS-1-SelfToken:39;
+// list-2
+$PS-row-2:1;
+$PS-2-GotooCo:0;
+$PS-2-BerkeleyBX:1;
+$PS-2-HKUOSAT:2;
+$PS-2-NTU:3;
+$PS-2-NTHU:4;
+$PS-2-UNC:5;
+$PS-2-NTUOTN:6;
+$PS-2-NTUOB:7;
+$PS-2-SJSU:8;
+$PS-2-SCFEAT:9;
+$PS-2-UCBerkeley:10;
+$PS-2-UONLV:11;
+$PS-2-UOChicago:12;
+$PS-2-HKMonetaryAuthority:13;
+$PS-2-IFII:14;
+$PS-2-ITRI:15;
+$PS-2-NARlabs:16;
+$PS-2-Binance:17;
+$PS-2-BitRabbit:18;
+$PS-2-BytePay:19;
+$PS-2-meetOne:20;
+$PS-2-trustWallet:21;
+$PS-2-JPMorgan:22;
+$PS-2-shaghaiCB:23;
+$PS-2-bankOfShaghai:24;
+$PS-2-theShaghaiCSB:25;
+$PS-2-hyhworld:26;
+$PS-2-BASF:27;
+$PS-2-wolframAlpha:28;
+$PS-2-hkctf:29;
+
+// teamExperience var
+$TE-totalLogo:14;
+$TE-JPMorgan:0;
+$TE-intel:1;
+$TE-microsoft:2;
+$TE-pwc:3;
+$TE-ibm:4;
+$TE-hsbc:5;
+$TE-hkedc:6;
+$TE-didi:7;
+$TE-appliedMaterials:8;
+$TE-AcademiaSinica:9;
+$TE-stanfordUniversity:10;
+$TE-berkeley:11;
+$TE-HKUOSAT:12;
+$TE-UofChicago:13;
+$TE-tsinghuaUniversity:14;
+
+// landingPage var
+$LP-totalLogo:5;
+$LP-UCBerkeley:0;
+$LP-SCFEAT:1;
+$LP-HKUOSAT:2;
+$LP-JPMorgan:3;
+$LP-Binance:4;
+$LP-MITTechnologyReview:5;

@@ -1,0 +1,1764 @@
+/*----------- reset start -----------*/
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+img {
+  border: 0; }
+
+:focus {
+  outline: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+input, button, textarea, select, optgroup, option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  border: 0; }
+
+table, tbody {
+  display: block; }
+
+/*purpose To enable resizing for IE */
+/*branch For IE6-Win, IE7-Win */
+ol, ul, li {
+  list-style: none; }
+
+:link, :visited, ins {
+  text-decoration: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+/*HTML5 tag*/
+section, article, aside, footer, header, nav, main {
+  display: block; }
+
+a, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent; }
+
+a {
+  display: block; }
+
+*:focus, a:focus {
+  outline: none; }
+
+html {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.1em; }
+
+button {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; }
+
+html.fixed {
+  overflow: hidden; }
+
+body.fixed {
+  overflow: hidden; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local("Raleway Thin"), local("Raleway-Thin"), url(https://fonts.gstatic.com/s/raleway/v13/1Ptsg8zYS_SKggPNwE44Q4FqL_KWxWMT.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local("Raleway Thin"), local("Raleway-Thin"), url(https://fonts.gstatic.com/s/raleway/v13/1Ptsg8zYS_SKggPNwE44TYFqL_KWxQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwIouWqhPANqczVsq4A.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwIouWqZPANqczVs.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+header {
+  background: #141414;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 3% 5%;
+  z-index: 99; }
+  header .logo {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    cursor: pointer; }
+    header .logo a {
+      color: #fff; }
+  header .hamburgerIcon {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 1rem;
+    height: 1rem;
+    fill: #fff; }
+  header .selectList {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(20, 20, 20, 0.8);
+    height: 100vh;
+    padding: 4%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    pointer-events: none; }
+    header .selectList li {
+      display: block;
+      color: #fff;
+      margin-bottom: 12%;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      header .selectList li.active {
+        color: #fc0000; }
+    header .selectList.active {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+      pointer-events: unset; }
+  header .selectListWeb {
+    display: none; }
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 1% 3%; }
+    header .hamburgerIcon {
+      display: none; }
+    header .selectListWeb {
+      display: block;
+      position: absolute;
+      right: 3%;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s; }
+      header .selectListWeb li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 1rem;
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 0.8rem;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        cursor: pointer; }
+        header .selectListWeb li:last-child {
+          margin-right: 0; }
+        header .selectListWeb li:hover {
+          opacity: 0.6; }
+        header .selectListWeb li.active {
+          color: #fc0000; } }
+
+footer {
+  position: relative;
+  width: 100%;
+  background: #191919;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8%;
+  text-align: center; }
+  footer .title {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5; }
+  footer .contactList {
+    display: block;
+    font-size: 0;
+    border-bottom: 1px solid #656665;
+    padding: 11% 0; }
+    footer .contactList li {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width: 10%;
+      padding-bottom: 10%;
+      border-radius: 50%;
+      border: 2px solid #535561;
+      margin-right: 5%; }
+      footer .contactList li:last-child {
+        margin-right: 0; }
+      footer .contactList li:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: url(../../img/fontAwesomeIcon.png) no-repeat;
+        background-size: 100%; }
+      footer .contactList li a {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%; }
+      footer .contactList li.email:after {
+        background-position-y: 81.81818%; }
+      footer .contactList li.facebook:after {
+        background-position-y: 9.09091%; }
+      footer .contactList li.linkedin:after {
+        background-position-y: 45.45455%; }
+  footer .Subscription {
+    text-align: center;
+    margin: 8% 0; }
+    footer .Subscription .SubscriptionBtn {
+      display: inline-block;
+      padding: 4%;
+      color: #fff;
+      font-size: 0.9rem;
+      border: 1px solid #fff;
+      border-radius: 99rem; }
+  footer .bottomText {
+    color: #656665;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.9rem;
+    font-weight: 200; }
+
+@media screen and (min-width: 1024px) {
+  footer {
+    text-align: left; }
+    footer .wrap {
+      max-width: 1200px;
+      margin: 0 auto; }
+      footer .wrap .contactList {
+        padding: 4% 0; }
+        footer .wrap .contactList li {
+          width: 4%;
+          padding-bottom: 4%;
+          margin-right: 2%;
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s; }
+          footer .wrap .contactList li:hover {
+            opacity: 0.6; }
+      footer .wrap .Subscription .SubscriptionBtn {
+        padding: 2%;
+        -webkit-animation: none;
+        animation: none;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s; }
+        footer .wrap .Subscription .SubscriptionBtn:hover {
+          opacity: 0.6; } }
+
+@-webkit-keyframes sliderFromLeft {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1; } }
+
+@keyframes sliderFromLeft {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes logoAnimation {
+  form {
+    background-position-y: 0%; }
+  to {
+    background-position-y: 100%; } }
+
+@keyframes logoAnimation {
+  form {
+    background-position-y: 0%; }
+  to {
+    background-position-y: 100%; } }
+
+@-webkit-keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+  75% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+  90% {
+    -webkit-transform: scale(1.4, 1.4);
+    transform: scale(1.4, 1.4); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+  75% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+  90% {
+    -webkit-transform: scale(1.4, 1.4);
+    transform: scale(1.4, 1.4); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@-webkit-keyframes scaleTransition {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50% {
+    -webkit-transform: scale(1.4, 1.4);
+    transform: scale(1.4, 1.4); }
+  75% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@keyframes scaleTransition {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50% {
+    -webkit-transform: scale(1.4, 1.4);
+    transform: scale(1.4, 1.4); }
+  75% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+html {
+  background: #191919;
+  font-size: 16px; }
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 20px; } }
+
+#mainLogo-area {
+  width: 100%;
+  min-height: 100vh;
+  background: #191919;
+  position: relative;
+  top: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15% 8% 0 8%;
+  overflow-x: hidden;
+  text-align: center; }
+  #mainLogo-area .logoIcon {
+    position: relative;
+    width: 45%;
+    padding-bottom: 45%;
+    margin: 0 auto;
+    -webkit-animation: scaleIn 1.4s;
+    animation: scaleIn 1.4s; }
+    #mainLogo-area .logoIcon #insideIcon {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(../../img/logo_animation.png) no-repeat;
+      background-size: 100%;
+      -webkit-animation: logoAnimation 0.4s steps(23) infinite;
+      animation: logoAnimation 0.4s steps(23) infinite;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused; }
+  #mainLogo-area .title {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 6% 0;
+    border-bottom: 1px solid #656665;
+    -webkit-animation: sliderFromLeft 0.6s;
+    animation: sliderFromLeft 0.6s; }
+  #mainLogo-area .subtitle {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    line-height: 2;
+    padding: 4% 0;
+    -webkit-animation: sliderFromLeft 0.8s;
+    animation: sliderFromLeft 0.8s; }
+  #mainLogo-area .content {
+    -webkit-animation: sliderFromLeft 1s;
+    animation: sliderFromLeft 1s; }
+    #mainLogo-area .content span {
+      color: #656665;
+      font-size: 0.8rem;
+      font-weight: 200;
+      text-transform: none;
+      line-height: 2; }
+      #mainLogo-area .content span.EN {
+        letter-spacing: 0; }
+  #mainLogo-area .recognizedBy {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    line-height: 2;
+    padding: 4% 0;
+    -webkit-animation: sliderFromLeft 1.2s;
+    animation: sliderFromLeft 1.2s; }
+  #mainLogo-area .logoList {
+    width: 100%;
+    font-size: 0;
+    letter-spacing: 0;
+    -webkit-animation: sliderFromLeft 1.2s;
+    animation: sliderFromLeft 1.2s; }
+    #mainLogo-area .logoList .List {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 15%;
+      padding-bottom: 12%;
+      margin-right: 2%;
+      background: url(../../img/landingPageLogos.png) no-repeat;
+      background-size: 100%; }
+      #mainLogo-area .logoList .List:last-child {
+        margin-right: 0; }
+      #mainLogo-area .logoList .List a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%; }
+      #mainLogo-area .logoList .List.UCBerkeley {
+        background-position-y: 0%; }
+      #mainLogo-area .logoList .List.SCFEAT {
+        background-position-y: 20%; }
+      #mainLogo-area .logoList .List.HKUOSAT {
+        background-position-y: 40%; }
+      #mainLogo-area .logoList .List.JPMorgan {
+        background-position-y: 60%; }
+      #mainLogo-area .logoList .List.Binance {
+        background-position-y: 80%; }
+      #mainLogo-area .logoList .List.MITTechnologyReview {
+        background-position-y: 100%; }
+
+@media screen and (min-width: 1024px) {
+  #mainLogo-area {
+    padding: 8.6% 8% 0 8%; }
+    #mainLogo-area .wrap {
+      max-width: 1200px;
+      margin: 0 auto; }
+      #mainLogo-area .wrap .logoIcon {
+        width: 23%;
+        padding-bottom: 23%; }
+      #mainLogo-area .wrap .title {
+        padding: 3% 0; }
+      #mainLogo-area .wrap .subtitle {
+        padding: 2% 0; }
+      #mainLogo-area .wrap .recognizedBy {
+        padding: 4% 0 0 0; }
+      #mainLogo-area .wrap .logoList .List {
+        width: 10%;
+        padding-bottom: 8%;
+        margin-right: 3%;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        cursor: pointer; }
+        #mainLogo-area .wrap .logoList .List:hover {
+          opacity: 0.6; } }
+
+#portfolio-area {
+  width: 100%;
+  background: #191919;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 8%; }
+  #portfolio-area .marjorTitle {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 6% 0;
+    border-bottom: 1px solid #656665; }
+  #portfolio-area .discript {
+    color: #fff;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.9rem;
+    font-weight: 200;
+    line-height: 1.5;
+    padding: 6% 0; }
+  #portfolio-area .portfolio-list {
+    font-size: 0;
+    letter-spacing: 0; }
+    #portfolio-area .portfolio-list li {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background: #383848;
+      margin-bottom: 10%;
+      letter-spacing: 0.1rem; }
+      #portfolio-area .portfolio-list li .picture {
+        position: relative;
+        width: 100%;
+        padding-bottom: 50%;
+        overflow: hidden; }
+        #portfolio-area .portfolio-list li .picture a {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 101%;
+          height: 101%;
+          -webkit-transform: translate(-50%, -50%) scale(1, 1) rotate(0deg);
+          -ms-transform: translate(-50%, -50%) scale(1, 1) rotate(0deg);
+          transform: translate(-50%, -50%) scale(1, 1) rotate(0deg);
+          background: url(../../img/portfolioPicture.jpg) no-repeat;
+          background-size: 100%;
+          -webkit-transition: 0.5s;
+          -o-transition: 0.5s;
+          transition: 0.5s;
+          z-index: 1;
+          cursor: pointer; }
+      #portfolio-area .portfolio-list li.selfToken .picture a {
+        background-position-y: 0%; }
+      #portfolio-area .portfolio-list li.blackbirdAi .picture a {
+        background-position-y: 33.33333%; }
+      #portfolio-area .portfolio-list li.VMFive .picture a {
+        background-position-y: 66.66667%; }
+      #portfolio-area .portfolio-list li.HongYingClub .picture a {
+        background-position-y: 100%; }
+      #portfolio-area .portfolio-list li .textArea {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 8% 5% 5% 5%; }
+        #portfolio-area .portfolio-list li .textArea li {
+          color: #fff;
+          font-size: 0.8rem;
+          border-radius: unset;
+          display: block;
+          width: 100%;
+          margin: 0; }
+          #portfolio-area .portfolio-list li .textArea li.title {
+            padding-bottom: 5%;
+            border-bottom: 1px solid #656665;
+            font-weight: bold; }
+            #portfolio-area .portfolio-list li .textArea li.title a {
+              display: inline-block;
+              color: #fff; }
+          #portfolio-area .portfolio-list li .textArea li.content {
+            letter-spacing: 0;
+            line-height: 2;
+            text-transform: none;
+            font-weight: 200;
+            padding: 5% 0; }
+          #portfolio-area .portfolio-list li .textArea li.provided span {
+            display: inline-block;
+            vertical-align: middle;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.8;
+            font-weight: bold; }
+          #portfolio-area .portfolio-list li .textArea li.provided .icon {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            width: 10%;
+            padding-bottom: 10%;
+            border-radius: 50%;
+            border: 2px solid #535561;
+            margin-left: 2.5%; }
+            #portfolio-area .portfolio-list li .textArea li.provided .icon:after {
+              content: '';
+              position: absolute;
+              width: 50%;
+              height: 50%;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              z-index: 1;
+              background: url(../../img/fontAwesomeIcon.png) no-repeat;
+              background-size: 100%; }
+            #portfolio-area .portfolio-list li .textArea li.provided .icon.shield:after {
+              background-position-y: 90.90909%; }
+            #portfolio-area .portfolio-list li .textArea li.provided .icon.bitcoin:after {
+              background-position-y: 54.54545%; }
+            #portfolio-area .portfolio-list li .textArea li.provided .icon.graduation:after {
+              background-position-y: 72.72727%; }
+            #portfolio-area .portfolio-list li .textArea li.provided .icon.book:after {
+              background-position-y: 63.63636%; }
+            #portfolio-area .portfolio-list li .textArea li.provided .icon.database:after {
+              background-position-y: 100%; }
+
+@media screen and (min-width: 1024px) {
+  #portfolio-area {
+    padding-bottom: 4%; }
+    #portfolio-area .wrap {
+      max-width: 1200px;
+      margin: 0 auto; }
+      #portfolio-area .wrap .marjorTitle {
+        padding: 3% 0; }
+      #portfolio-area .wrap .discript {
+        padding: 3% 0; }
+      #portfolio-area .wrap .portfolio-list > li {
+        width: 48%;
+        margin-bottom: 4%;
+        margin-right: 4%;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s; }
+        #portfolio-area .wrap .portfolio-list > li:nth-child(2n) {
+          margin-right: 0; }
+        #portfolio-area .wrap .portfolio-list > li:hover {
+          -webkit-transform: scale(1.05, 1.1) translateX(2%);
+          -ms-transform: scale(1.05, 1.1) translateX(2%);
+          transform: scale(1.05, 1.1) translateX(2%); }
+        #portfolio-area .wrap .portfolio-list > li:nth-child(2n):hover {
+          -webkit-transform: scale(1.05, 1.1) translateX(-2%);
+          -ms-transform: scale(1.05, 1.1) translateX(-2%);
+          transform: scale(1.05, 1.1) translateX(-2%); }
+        #portfolio-area .wrap .portfolio-list > li .picture:hover a {
+          -webkit-transform: translate(-50%, -50%) scale(1.3, 1.3);
+          -ms-transform: translate(-50%, -50%) scale(1.3, 1.3);
+          transform: translate(-50%, -50%) scale(1.3, 1.3); }
+        #portfolio-area .wrap .portfolio-list > li .textArea .provided .icon {
+          width: 7%;
+          padding-bottom: 7%; } }
+
+#research-area {
+  width: 100%;
+  background: #300002;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 8%;
+  margin: 12% 0;
+  z-index: 3; }
+  #research-area .triangleTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateY(-99%) rotateY(0deg);
+    transform: translateY(-99%) rotateY(0deg);
+    width: 100%;
+    height: 3rem;
+    z-index: 1;
+    fill: #300002; }
+  #research-area .triangleBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateY(99%) rotateX(180deg) rotateY(180deg);
+    transform: translateY(99%) rotateX(180deg) rotateY(180deg);
+    width: 100%;
+    height: 3rem;
+    z-index: 1;
+    fill: #300002; }
+  #research-area .marjorTitle {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 6% 0;
+    border-bottom: 1px solid #656665; }
+  #research-area .researchList {
+    font-size: 0;
+    width: 100%;
+    padding-top: 6%;
+    letter-spacing: 0; }
+    #research-area .researchList li {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0.3rem;
+      background: #fff;
+      margin-bottom: 8%;
+      letter-spacing: 0.1rem; }
+      #research-area .researchList li .img {
+        width: 100%;
+        padding-bottom: 50%;
+        position: relative;
+        overflow: hidden; }
+        #research-area .researchList li .img a {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 101%;
+          height: 101%;
+          -webkit-transform: translate(-50%, -50%) scale(1, 1) rotate(0deg);
+          -ms-transform: translate(-50%, -50%) scale(1, 1) rotate(0deg);
+          transform: translate(-50%, -50%) scale(1, 1) rotate(0deg);
+          background: url(../../img/research-img.jpg) no-repeat;
+          background-size: 100%;
+          -webkit-transition: 0.5s;
+          -o-transition: 0.5s;
+          transition: 0.5s;
+          z-index: 1;
+          cursor: pointer; }
+      #research-area .researchList li .textArea {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 6% 8%; }
+        #research-area .researchList li .textArea h3 {
+          font-family: Raleway, Helvetica, sans-serif;
+          color: #000;
+          font-size: 0.9rem;
+          font-weight: bold;
+          line-height: 2; }
+        #research-area .researchList li .textArea p {
+          color: #000;
+          font-size: 0.8rem;
+          text-transform: none;
+          letter-spacing: 0;
+          font-weight: 200;
+          line-height: 2;
+          overflow: hidden;
+          height: 1.5rem; }
+          #research-area .researchList li .textArea p a {
+            display: inline;
+            cursor: pointer;
+            color: #45558d;
+            border-bottom: 1px dashed currentColor; }
+            #research-area .researchList li .textArea p a:hover {
+              border-bottom: 1px dashed transparent; }
+      #research-area .researchList li .otherArea {
+        display: none;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 8% 6% 8%;
+        letter-spacing: 0; }
+        #research-area .researchList li .otherArea .PAtitle {
+          color: #000;
+          font-size: 0.9rem;
+          font-weight: bold;
+          text-transform: none; }
+        #research-area .researchList li .otherArea .iconList {
+          padding-top: 5%;
+          letter-spacing: 0;
+          padding-bottom: 3%; }
+          #research-area .researchList li .otherArea .iconList:last-child {
+            padding-bottom: 0%; }
+          #research-area .researchList li .otherArea .iconList .icon {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            width: 16%;
+            padding-bottom: 16%;
+            border: 1px solid #bebebe;
+            border-radius: 0.3rem;
+            overflow: hidden;
+            margin-right: 3%;
+            margin-bottom: 2%; }
+            #research-area .researchList li .otherArea .iconList .icon a {
+              position: absolute;
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: url(../../img/research-icons.png) no-repeat;
+              background-size: 200%;
+              -webkit-transition: 0.3s;
+              -o-transition: 0.3s;
+              transition: 0.3s;
+              z-index: 1;
+              cursor: pointer; }
+            #research-area .researchList li .otherArea .iconList .icon:hover a {
+              opacity: 0.6; }
+            #research-area .researchList li .otherArea .iconList .icon.binance a {
+              background-position-y: 0%; }
+            #research-area .researchList li .otherArea .iconList .icon.gitcoin a {
+              background-position-y: 2.22222%; }
+            #research-area .researchList li .otherArea .iconList .icon.ethereal a {
+              background-position-y: 4.44444%; }
+            #research-area .researchList li .otherArea .iconList .icon.ieee a {
+              background-position-y: 6.66667%; }
+            #research-area .researchList li .otherArea .iconList .icon.HITC a {
+              background-position-y: 8.88889%; }
+            #research-area .researchList li .otherArea .iconList .icon.todohacker a {
+              background-position-y: 11.11111%; }
+            #research-area .researchList li .otherArea .iconList .icon.dexon a {
+              background-position-y: 13.33333%; }
+            #research-area .researchList li .otherArea .iconList .icon.bithub a {
+              background-position-y: 15.55556%; }
+            #research-area .researchList li .otherArea .iconList .icon.alysida a {
+              background-position-y: 17.77778%; }
+            #research-area .researchList li .otherArea .iconList .icon.ITRI a {
+              background-position-y: 20%; }
+            #research-area .researchList li .otherArea .iconList .icon.III a {
+              background-position-y: 22.22222%; }
+            #research-area .researchList li .otherArea .iconList .icon.NARlabs a {
+              background-position-y: 24.44444%; }
+            #research-area .researchList li .otherArea .iconList .icon.berkeley a {
+              background-position-y: 26.66667%; }
+            #research-area .researchList li .otherArea .iconList .icon.THKUOSAT a {
+              background-position-y: 28.88889%; }
+            #research-area .researchList li .otherArea .iconList .icon.NTU a {
+              background-position-y: 31.11111%; }
+            #research-area .researchList li .otherArea .iconList .icon.taipeiTech a {
+              background-position-y: 33.33333%; }
+            #research-area .researchList li .otherArea .iconList .icon.NTUOB a {
+              background-position-y: 35.55556%; }
+            #research-area .researchList li .otherArea .iconList .icon.JPMorgan a {
+              background-position-y: 37.77778%; }
+            #research-area .researchList li .otherArea .iconList .icon.htc a {
+              background-position-y: 40%; }
+            #research-area .researchList li .otherArea .iconList .icon.TUOC a {
+              background-position-y: 42.22222%; }
+            #research-area .researchList li .otherArea .iconList .icon.selfToken a {
+              background-position-y: 44.44444%; }
+            #research-area .researchList li .otherArea .iconList .icon.ethereum a {
+              background-position-y: 46.66667%; }
+            #research-area .researchList li .otherArea .iconList .icon.consensys a {
+              background-position-y: 48.88889%; }
+            #research-area .researchList li .otherArea .iconList .icon.liquality a {
+              background-position-y: 51.11111%; }
+            #research-area .researchList li .otherArea .iconList .icon.tron a {
+              background-position-y: 53.33333%; }
+            #research-area .researchList li .otherArea .iconList .icon.trustCaffe a {
+              background-position-y: 55.55556%; }
+            #research-area .researchList li .otherArea .iconList .icon.EOS a {
+              background-position-y: 57.77778%; }
+            #research-area .researchList li .otherArea .iconList .icon.meetOne a {
+              background-position-y: 60%; }
+            #research-area .researchList li .otherArea .iconList .icon.slowMist a {
+              background-position-y: 62.22222%; }
+            #research-area .researchList li .otherArea .iconList .icon.wmfive a {
+              background-position-y: 64.44444%; }
+            #research-area .researchList li .otherArea .iconList .icon.acxel a {
+              background-position-y: 66.66667%; }
+            #research-area .researchList li .otherArea .iconList .icon.EOSTaipei a {
+              background-position-y: 68.88889%; }
+            #research-area .researchList li .otherArea .iconList .icon.trustWallet a {
+              background-position-y: 71.11111%; }
+            #research-area .researchList li .otherArea .iconList .icon.accupass a {
+              background-position-y: 73.33333%; }
+            #research-area .researchList li .otherArea .iconList .icon.bytepay a {
+              background-position-y: 75.55556%; }
+            #research-area .researchList li .otherArea .iconList .icon.bitRabbit a {
+              background-position-y: 77.77778%; }
+            #research-area .researchList li .otherArea .iconList .icon.IMTTR a {
+              background-position-y: 80%; }
+            #research-area .researchList li .otherArea .iconList .icon.IBM a {
+              background-position-y: 82.22222%; }
+            #research-area .researchList li .otherArea .iconList .icon.AWGgovCloud a {
+              background-position-y: 84.44444%; }
+            #research-area .researchList li .otherArea .iconList .icon.wolfram a {
+              background-position-y: 86.66667%; }
+            #research-area .researchList li .otherArea .iconList .icon.shanghaiCBank a {
+              background-position-y: 88.88889%; }
+            #research-area .researchList li .otherArea .iconList .icon.BankOfshanghai a {
+              background-position-y: 91.11111%; }
+            #research-area .researchList li .otherArea .iconList .icon.HKMA a {
+              background-position-y: 93.33333%; }
+            #research-area .researchList li .otherArea .iconList .icon.shanghaisave a {
+              background-position-y: 95.55556%; }
+            #research-area .researchList li .otherArea .iconList .icon.cyberport a {
+              background-position-y: 97.77778%; }
+            #research-area .researchList li .otherArea .iconList .icon.hackernoon a {
+              background-position-y: 100%; }
+        #research-area .researchList li .otherArea .publicationsList {
+          padding: 8% 0;
+          letter-spacing: 0;
+          text-align: center; }
+          #research-area .researchList li .otherArea .publicationsList .publication {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            width: 45%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0 2.5%;
+            border: 1px solid #cdcdcd;
+            border-radius: 0;
+            overflow: hidden; }
+            #research-area .researchList li .otherArea .publicationsList .publication .publicationLink {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1; }
+            #research-area .researchList li .otherArea .publicationsList .publication.cryblock2 {
+              padding-bottom: 57%; }
+              #research-area .researchList li .otherArea .publicationsList .publication.cryblock2 .publicationLink {
+                background: url(../../img/papers/cryblock2.png) no-repeat;
+                background-size: 100%; }
+            #research-area .researchList li .otherArea .publicationsList .publication.cpe {
+              padding-bottom: 57%; }
+              #research-area .researchList li .otherArea .publicationsList .publication.cpe .publicationLink {
+                background: url(../../img/papers/cpe.png) no-repeat;
+                background-size: 100%; }
+            #research-area .researchList li .otherArea .publicationsList .publication.dappcon {
+              padding-bottom: 57%; }
+              #research-area .researchList li .otherArea .publicationsList .publication.dappcon .publicationLink {
+                background: url(../../img/papers/dappcon.png) no-repeat;
+                background-size: 100%; }
+        #research-area .researchList li .otherArea .awardsList {
+          padding-top: 5%;
+          letter-spacing: 0; }
+          #research-area .researchList li .otherArea .awardsList .awards {
+            width: 100%;
+            margin-bottom: 5%;
+            letter-spacing: 0; }
+            #research-area .researchList li .otherArea .awardsList .awards .flag {
+              display: inline-block;
+              vertical-align: middle;
+              width: 15%;
+              padding-bottom: 15%;
+              background: url(../../img/research-icons.png) no-repeat;
+              background-size: 200%;
+              background-position-x: 100%; }
+            #research-area .researchList li .otherArea .awardsList .awards .caption {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+              width: 85%;
+              padding-left: 3%; }
+              #research-area .researchList li .otherArea .awardsList .awards .caption span {
+                font-size: 0.8rem;
+                font-weight: 200;
+                text-transform: none;
+                line-height: 1.5; }
+                #research-area .researchList li .otherArea .awardsList .awards .caption span.title {
+                  font-weight: bold; }
+            #research-area .researchList li .otherArea .awardsList .awards.germany .flag {
+              background-position-y: 0%; }
+            #research-area .researchList li .otherArea .awardsList .awards.korea .flag {
+              background-position-y: 2.22222%; }
+            #research-area .researchList li .otherArea .awardsList .awards.hongKong .flag {
+              background-position-y: 4.44444%; }
+            #research-area .researchList li .otherArea .awardsList .awards.USA .flag {
+              background-position-y: 6.66667%; }
+            #research-area .researchList li .otherArea .awardsList .awards.china .flag {
+              background-position-y: 8.88889%; }
+      #research-area .researchList li.tsskit .img a {
+        background-position-y: 0%; }
+      #research-area .researchList li.SCH .img a {
+        background-position-y: 9.09091%; }
+      #research-area .researchList li.ecouponEcosystem .img a {
+        background-position-y: 18.18182%; }
+      #research-area .researchList li.ox1Academy .img a {
+        background-position-y: 27.27273%; }
+      #research-area .researchList li.RRR .img a {
+        background-position-y: 36.36364%; }
+      #research-area .researchList li.atomicSwap .img a {
+        background-position-y: 45.45455%; }
+      #research-area .researchList li.cryptoBeauty .img a {
+        background-position-y: 54.54545%; }
+      #research-area .researchList li.dragonGatePoker .img a {
+        background-position-y: 63.63636%; }
+      #research-area .researchList li.slefToken .img a {
+        background-position-y: 72.72727%; }
+      #research-area .researchList li.blackbirdAi .img a {
+        background-position-y: 81.81818%; }
+      #research-area .researchList li.AMLKYC .img a {
+        background-position-y: 90.90909%; }
+      #research-area .researchList li.SCV .img a {
+        background-position-y: 100%; }
+      #research-area .researchList li .seeMore {
+        width: 100%;
+        font-size: 0.8rem;
+        text-align: center;
+        color: #fff;
+        background: #515a79;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 3% 0; }
+      #research-area .researchList li.open p {
+        overflow: unset;
+        height: unset; }
+      #research-area .researchList li.open .otherArea {
+        display: block; }
+
+@media screen and (min-width: 768px) {
+  #research-area .researchList > li {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+    #research-area .researchList > li.grid-item {
+      width: 47%;
+      margin: 0 1.5% 3% 1.5%; }
+    #research-area .researchList > li .textArea h3 {
+      line-height: 1.5; }
+    #research-area .researchList > li .textArea p {
+      overflow: unset;
+      height: unset; }
+    #research-area .researchList > li .otherArea {
+      display: block; }
+    #research-area .researchList > li .seeMore {
+      display: none; } }
+
+@media screen and (min-width: 1024px) {
+  #research-area {
+    margin: 4% 0; }
+    #research-area .triangleTop, #research-area .triangleBottom {
+      height: 5rem; }
+    #research-area .wrap {
+      max-width: 1200px;
+      margin: 0 auto; }
+      #research-area .wrap .marjorTitle {
+        padding: 3% 0; }
+      #research-area .wrap .researchList {
+        padding-top: 3%;
+        position: relative; }
+        #research-area .wrap .researchList > li.grid-item {
+          width: 31%;
+          margin: 0 1% 2.5% 1%; }
+        #research-area .wrap .researchList > li:hover {
+          -webkit-transform: scale(1.1, 1.1);
+          -ms-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+          z-index: 99; }
+        #research-area .wrap .researchList > li .img:hover a {
+          -webkit-transform: translate(-50%, -50%) scale(1.3, 1.3);
+          -ms-transform: translate(-50%, -50%) scale(1.3, 1.3);
+          transform: translate(-50%, -50%) scale(1.3, 1.3); }
+        #research-area .wrap .researchList > li .otherArea .iconList .icon {
+          width: 31%;
+          padding-bottom: 31%;
+          margin-right: 2%; }
+          #research-area .wrap .researchList > li .otherArea .iconList .icon:nth-child(3n) {
+            margin-right: 0; } }
+
+#team-area {
+  width: 100%;
+  position: relative;
+  z-index: 2; }
+  #team-area ul {
+    width: 100%;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20% 8% 8% 8%;
+    text-align: right;
+    font-size: 0; }
+    #team-area ul:nth-child(1) {
+      padding-top: 8%; }
+    #team-area ul:last-child {
+      margin-bottom: 0; }
+    #team-area ul .triangleBottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      -webkit-transform: translateY(99%) rotateX(180deg) rotateY(0deg);
+      transform: translateY(99%) rotateX(180deg) rotateY(0deg);
+      width: 100%;
+      height: 3rem;
+      z-index: 1; }
+    #team-area ul:nth-child(2n) {
+      text-align: left; }
+      #team-area ul:nth-child(2n) .triangleBottom {
+        -webkit-transform: translateY(99%) rotateX(180deg) rotateY(180deg);
+        transform: translateY(99%) rotateX(180deg) rotateY(180deg); }
+    #team-area ul .img {
+      display: inline-block;
+      position: relative;
+      width: 50%;
+      padding-bottom: 50%;
+      border-radius: 50%;
+      background: url(../../img/team.jpg) no-repeat;
+      background-size: 100%; }
+    #team-area ul .mainTitle {
+      color: #fff;
+      font-family: Raleway, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 6% 0;
+      border-bottom: solid 2px rgba(255, 255, 255, 0.125); }
+    #team-area ul .subtitle {
+      color: #fff;
+      font-family: Raleway, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      padding: 5% 0; }
+    #team-area ul .resume {
+      color: #fff;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 0.8rem;
+      line-height: 2; }
+    #team-area ul .link ol {
+      width: 100%;
+      padding-top: 3%; }
+      #team-area ul .link ol .icon {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 7%;
+        padding-bottom: 7%;
+        margin-right: 4%;
+        background: url(../../img/fontAwesomeIcon.png) no-repeat;
+        background-size: 100%; }
+        #team-area ul .link ol .icon a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%; }
+        #team-area ul .link ol .icon:last-child {
+          margin-right: 0; }
+        #team-area ul .link ol .icon.home {
+          background-position-y: 0%; }
+        #team-area ul .link ol .icon.linkedin {
+          background-position-y: 45.45455%; }
+        #team-area ul .link ol .icon.medium {
+          background-position-y: 36.36364%; }
+        #team-area ul .link ol .icon.github {
+          background-position-y: 27.27273%; }
+        #team-area ul .link ol .icon.book {
+          background-position-y: 63.63636%; }
+        #team-area ul .link ol .icon.google {
+          background-position-y: 18.18182%; }
+        #team-area ul .link ol .icon.facebook {
+          background-position-y: 9.09091%; }
+    #team-area ul.jeff-hu {
+      background: #191919; }
+      #team-area ul.jeff-hu .img {
+        background-position-y: 0%; }
+      #team-area ul.jeff-hu .triangleBottom {
+        fill: #191919; }
+    #team-area ul.tina-lee {
+      background: #300002; }
+      #team-area ul.tina-lee .img {
+        background-position-y: 10%; }
+      #team-area ul.tina-lee .triangleBottom {
+        fill: #300002; }
+    #team-area ul.ken-wong {
+      background: #353848; }
+      #team-area ul.ken-wong .img {
+        background-position-y: 20%; }
+      #team-area ul.ken-wong .triangleBottom {
+        fill: #353848; }
+    #team-area ul.martin-shin {
+      background: #191919; }
+      #team-area ul.martin-shin .img {
+        background-position-y: 30%; }
+      #team-area ul.martin-shin .triangleBottom {
+        fill: #191919; }
+    #team-area ul.andrew-goa {
+      background: #353848; }
+      #team-area ul.andrew-goa .img {
+        background-position-y: 40%; }
+      #team-area ul.andrew-goa .triangleBottom {
+        fill: #353848; }
+    #team-area ul.matthew-liu {
+      background: #300002; }
+      #team-area ul.matthew-liu .img {
+        background-position-y: 50%; }
+      #team-area ul.matthew-liu .triangleBottom {
+        fill: #300002; }
+    #team-area ul.chen-po {
+      background: #191919; }
+      #team-area ul.chen-po .img {
+        background-position-y: 60%; }
+      #team-area ul.chen-po .triangleBottom {
+        fill: #191919; }
+    #team-area ul.tom-lam {
+      background: #353848; }
+      #team-area ul.tom-lam .img {
+        background-position-y: 70%; }
+      #team-area ul.tom-lam .triangleBottom {
+        fill: #353848; }
+    #team-area ul.jc-ko {
+      background: #191919; }
+      #team-area ul.jc-ko .img {
+        background-position-y: 80%; }
+      #team-area ul.jc-ko .triangleBottom {
+        fill: #191919; }
+    #team-area ul.pan-hui {
+      background: #300002; }
+      #team-area ul.pan-hui .img {
+        background-position-y: 90%; }
+      #team-area ul.pan-hui .triangleBottom {
+        fill: #300002; }
+    #team-area ul.roger-wu {
+      background: #353848; }
+      #team-area ul.roger-wu .img {
+        background-position-y: 100%; }
+      #team-area ul.roger-wu .triangleBottom {
+        fill: #353848; }
+    #team-area ul.teamExperience {
+      background: #f3f3f3; }
+      #team-area ul.teamExperience .triangleBottom {
+        fill: #f3f3f3; }
+      #team-area ul.teamExperience .marjorTitle {
+        color: #191919;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 6% 0;
+        border-bottom: solid 2px rgba(25, 25, 25, 0.125); }
+      #team-area ul.teamExperience .TElist {
+        font-size: 0;
+        letter-spacing: 0;
+        text-align: left;
+        padding: 6% 0; }
+        #team-area ul.teamExperience .TElist .TElogo {
+          display: inline-block;
+          vertical-align: middle;
+          width: 48%;
+          padding-bottom: 19.2%;
+          margin: 0 2% 2% 0;
+          background: #00b8ff;
+          background: url(../../img/teamExperience.png) no-repeat;
+          background-size: 100%; }
+          #team-area ul.teamExperience .TElist .TElogo:nth-child(2n) {
+            margin: 0 0 2% 0; }
+          #team-area ul.teamExperience .TElist .TElogo.JPMorgan {
+            background-position-y: 0%; }
+          #team-area ul.teamExperience .TElist .TElogo.intel {
+            background-position-y: 7.14286%; }
+          #team-area ul.teamExperience .TElist .TElogo.microsoft {
+            background-position-y: 14.28571%; }
+          #team-area ul.teamExperience .TElist .TElogo.pwc {
+            background-position-y: 21.42857%; }
+          #team-area ul.teamExperience .TElist .TElogo.ibm {
+            background-position-y: 28.57143%; }
+          #team-area ul.teamExperience .TElist .TElogo.hsbc {
+            background-position-y: 35.71429%; }
+          #team-area ul.teamExperience .TElist .TElogo.hkedc {
+            background-position-y: 42.85714%; }
+          #team-area ul.teamExperience .TElist .TElogo.didi {
+            background-position-y: 50%; }
+          #team-area ul.teamExperience .TElist .TElogo.appliedMaterials {
+            background-position-y: 57.14286%; }
+          #team-area ul.teamExperience .TElist .TElogo.AcademiaSinica {
+            background-position-y: 64.28571%; }
+          #team-area ul.teamExperience .TElist .TElogo.stanfordUniversity {
+            background-position-y: 71.42857%; }
+          #team-area ul.teamExperience .TElist .TElogo.berkeley {
+            background-position-y: 78.57143%; }
+          #team-area ul.teamExperience .TElist .TElogo.HKUOSAT {
+            background-position-y: 85.71429%; }
+          #team-area ul.teamExperience .TElist .TElogo.UofChicago {
+            background-position-y: 92.85714%; }
+          #team-area ul.teamExperience .TElist .TElogo.tsinghuaUniversity {
+            background-position-y: 100%; }
+
+@media screen and (min-width: 768px) {
+  #team-area ul.teamExperience .TElist {
+    text-align: center; }
+    #team-area ul.teamExperience .TElist .TElogo {
+      width: 30%;
+      padding-bottom: 12%;
+      margin: 0 3.33333% 3.33333% 0; }
+      #team-area ul.teamExperience .TElist .TElogo:nth-child(2n) {
+        margin: 0 3.33333% 3.33333% 0; }
+      #team-area ul.teamExperience .TElist .TElogo:nth-child(3n) {
+        margin: 0 0 3.33333% 0; } }
+
+@media screen and (min-width: 1024px) {
+  #team-area ul {
+    padding: 8% 8% 4% 8%; }
+    #team-area ul .triangleBottom {
+      height: 5rem; }
+    #team-area ul:nth-child(1) {
+      padding-top: 4%; }
+    #team-area ul .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #team-area ul .wrap .img {
+        width: 30%;
+        padding-bottom: 30%; }
+      #team-area ul .wrap .text_group {
+        width: 65%;
+        text-align: right;
+        margin-right: 5%; }
+        #team-area ul .wrap .text_group .mainTitle {
+          padding-top: 0; }
+      #team-area ul .wrap .link ol .icon {
+        width: 5%;
+        padding-bottom: 5%;
+        -webkit-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s; }
+        #team-area ul .wrap .link ol .icon:hover {
+          opacity: 0.6; }
+    #team-area ul:nth-child(2n) .wrap {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      #team-area ul:nth-child(2n) .wrap .text_group {
+        text-align: left;
+        margin-left: 5%;
+        margin-right: 0; }
+    #team-area ul.teamExperience .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: block; }
+      #team-area ul.teamExperience .wrap .marjorTitle {
+        padding: 3% 0;
+        text-align: center; }
+      #team-area ul.teamExperience .wrap .TElist {
+        padding: 3% 0; }
+        #team-area ul.teamExperience .wrap .TElist .TElogo {
+          width: 18.4%;
+          padding-bottom: 7.36%;
+          margin-right: 2%;
+          margin-bottom: 3%; }
+          #team-area ul.teamExperience .wrap .TElist .TElogo:nth-child(5n) {
+            margin-right: 0; } }
+
+#partnership-area {
+  width: 100%;
+  background: #353848;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20% 8%; }
+  #partnership-area .marjorTitle {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 6% 0;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.125); }
+  #partnership-area .partnershipList {
+    font-size: 0;
+    letter-spacing: 0;
+    margin: 8% 0; }
+    #partnership-area .partnershipList .icon {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 33.33333%;
+      padding-bottom: 33.33333%;
+      background: url(../../img/partnership.png) no-repeat;
+      background-size: 200%; }
+      #partnership-area .partnershipList .icon a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+      #partnership-area .partnershipList .icon.0x1Academy {
+        background-position-y: 0%; }
+      #partnership-area .partnershipList .icon.blockchainEN {
+        background-position-y: 2.5641%; }
+      #partnership-area .partnershipList .icon.hahow {
+        background-position-y: 5.12821%; }
+      #partnership-area .partnershipList .icon.hackerNoon {
+        background-position-y: 7.69231%; }
+      #partnership-area .partnershipList .icon.tibaMe {
+        background-position-y: 10.25641%; }
+      #partnership-area .partnershipList .icon.xMag {
+        background-position-y: 12.82051%; }
+      #partnership-area .partnershipList .icon.BlockTempo {
+        background-position-y: 15.38462%; }
+      #partnership-area .partnershipList .icon.ETNet {
+        background-position-y: 17.94872%; }
+      #partnership-area .partnershipList .icon.HITCON {
+        background-position-y: 20.51282%; }
+      #partnership-area .partnershipList .icon.cyberportHK {
+        background-position-y: 23.07692%; }
+      #partnership-area .partnershipList .icon.MITTechnologyReview {
+        background-position-y: 25.64103%; }
+      #partnership-area .partnershipList .icon.TaipeiEthereumMeetup {
+        background-position-y: 28.20513%; }
+      #partnership-area .partnershipList .icon.todoHacker {
+        background-position-y: 30.76923%; }
+      #partnership-area .partnershipList .icon.bithub {
+        background-position-y: 33.33333%; }
+      #partnership-area .partnershipList .icon.trustCaffe {
+        background-position-y: 35.89744%; }
+      #partnership-area .partnershipList .icon.UPTOWNSeoul {
+        background-position-y: 38.46154%; }
+      #partnership-area .partnershipList .icon.UPTOWNHK {
+        background-position-y: 41.02564%; }
+      #partnership-area .partnershipList .icon.acer {
+        background-position-y: 43.58974%; }
+      #partnership-area .partnershipList .icon.AWSGovCloud {
+        background-position-y: 46.15385%; }
+      #partnership-area .partnershipList .icon.htc {
+        background-position-y: 48.71795%; }
+      #partnership-area .partnershipList .icon.ibm {
+        background-position-y: 51.28205%; }
+      #partnership-area .partnershipList .icon.ieee {
+        background-position-y: 53.84615%; }
+      #partnership-area .partnershipList .icon.accupass {
+        background-position-y: 56.41026%; }
+      #partnership-area .partnershipList .icon.acxel {
+        background-position-y: 58.97436%; }
+      #partnership-area .partnershipList .icon.consenSys {
+        background-position-y: 61.53846%; }
+      #partnership-area .partnershipList .icon.DEXON {
+        background-position-y: 64.10256%; }
+      #partnership-area .partnershipList .icon.EOS {
+        background-position-y: 66.66667%; }
+      #partnership-area .partnershipList .icon.EthereumFoundation {
+        background-position-y: 69.23077%; }
+      #partnership-area .partnershipList .icon.Flowchain {
+        background-position-y: 71.79487%; }
+      #partnership-area .partnershipList .icon.Gitcoin {
+        background-position-y: 74.35897%; }
+      #partnership-area .partnershipList .icon.KeyXentic {
+        background-position-y: 76.92308%; }
+      #partnership-area .partnershipList .icon.Liquality {
+        background-position-y: 79.48718%; }
+      #partnership-area .partnershipList .icon.SlowMist {
+        background-position-y: 82.05128%; }
+      #partnership-area .partnershipList .icon.TronNetwork {
+        background-position-y: 84.61538%; }
+      #partnership-area .partnershipList .icon.VMFIVE {
+        background-position-y: 87.17949%; }
+      #partnership-area .partnershipList .icon.Alysida {
+        background-position-y: 89.74359%; }
+      #partnership-area .partnershipList .icon.AnChain {
+        background-position-y: 92.30769%; }
+      #partnership-area .partnershipList .icon.BlackbirdAI {
+        background-position-y: 94.87179%; }
+      #partnership-area .partnershipList .icon.EOSTaipei {
+        background-position-y: 97.4359%; }
+      #partnership-area .partnershipList .icon.SelfToken {
+        background-position-y: 100%; }
+      #partnership-area .partnershipList .icon.GotooCo {
+        background-position-x: 100%;
+        background-position-y: 0%; }
+      #partnership-area .partnershipList .icon.BerkeleyBX {
+        background-position-x: 100%;
+        background-position-y: 2.5641%; }
+      #partnership-area .partnershipList .icon.HKUOSAT {
+        background-position-x: 100%;
+        background-position-y: 5.12821%; }
+      #partnership-area .partnershipList .icon.NTU {
+        background-position-x: 100%;
+        background-position-y: 7.69231%; }
+      #partnership-area .partnershipList .icon.NTHU {
+        background-position-x: 100%;
+        background-position-y: 10.25641%; }
+      #partnership-area .partnershipList .icon.UNC {
+        background-position-x: 100%;
+        background-position-y: 12.82051%; }
+      #partnership-area .partnershipList .icon.NTUOTN {
+        background-position-x: 100%;
+        background-position-y: 15.38462%; }
+      #partnership-area .partnershipList .icon.NTUOB {
+        background-position-x: 100%;
+        background-position-y: 17.94872%; }
+      #partnership-area .partnershipList .icon.SJSU {
+        background-position-x: 100%;
+        background-position-y: 20.51282%; }
+      #partnership-area .partnershipList .icon.SCFEAT {
+        background-position-x: 100%;
+        background-position-y: 23.07692%; }
+      #partnership-area .partnershipList .icon.UCBerkeley {
+        background-position-x: 100%;
+        background-position-y: 25.64103%; }
+      #partnership-area .partnershipList .icon.UONLV {
+        background-position-x: 100%;
+        background-position-y: 28.20513%; }
+      #partnership-area .partnershipList .icon.UOChicago {
+        background-position-x: 100%;
+        background-position-y: 30.76923%; }
+      #partnership-area .partnershipList .icon.HKMonetaryAuthority {
+        background-position-x: 100%;
+        background-position-y: 33.33333%; }
+      #partnership-area .partnershipList .icon.IFII {
+        background-position-x: 100%;
+        background-position-y: 35.89744%; }
+      #partnership-area .partnershipList .icon.ITRI {
+        background-position-x: 100%;
+        background-position-y: 38.46154%; }
+      #partnership-area .partnershipList .icon.NARlabs {
+        background-position-x: 100%;
+        background-position-y: 41.02564%; }
+      #partnership-area .partnershipList .icon.Binance {
+        background-position-x: 100%;
+        background-position-y: 43.58974%; }
+      #partnership-area .partnershipList .icon.BitRabbit {
+        background-position-x: 100%;
+        background-position-y: 46.15385%; }
+      #partnership-area .partnershipList .icon.BytePay {
+        background-position-x: 100%;
+        background-position-y: 48.71795%; }
+      #partnership-area .partnershipList .icon.meetOne {
+        background-position-x: 100%;
+        background-position-y: 51.28205%; }
+      #partnership-area .partnershipList .icon.trustWallet {
+        background-position-x: 100%;
+        background-position-y: 53.84615%; }
+      #partnership-area .partnershipList .icon.JPMorgan {
+        background-position-x: 100%;
+        background-position-y: 56.41026%; }
+      #partnership-area .partnershipList .icon.shaghaiCB {
+        background-position-x: 100%;
+        background-position-y: 58.97436%; }
+      #partnership-area .partnershipList .icon.bankOfShaghai {
+        background-position-x: 100%;
+        background-position-y: 61.53846%; }
+      #partnership-area .partnershipList .icon.theShaghaiCSB {
+        background-position-x: 100%;
+        background-position-y: 64.10256%; }
+      #partnership-area .partnershipList .icon.hyhworld {
+        background-position-x: 100%;
+        background-position-y: 66.66667%; }
+      #partnership-area .partnershipList .icon.BASF {
+        background-position-x: 100%;
+        background-position-y: 69.23077%; }
+      #partnership-area .partnershipList .icon.wolframAlpha {
+        background-position-x: 100%;
+        background-position-y: 71.79487%; }
+      #partnership-area .partnershipList .icon.hkctf {
+        background-position-x: 100%;
+        background-position-y: 74.35897%; }
+
+@media screen and (min-width: 768px) {
+  #partnership-area {
+    width: 100%;
+    background: #353848;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20% 8%; }
+    #partnership-area .partnershipList .icon {
+      width: 25%;
+      padding-bottom: 25%; } }
+
+@media screen and (min-width: 1024px) {
+  #partnership-area {
+    width: 100%;
+    background: #353848;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 8%; }
+    #partnership-area .wrap {
+      max-width: 1200px;
+      margin: 0 auto; }
+      #partnership-area .wrap .marjorTitle {
+        padding: 4% 0; }
+      #partnership-area .wrap .partnershipList {
+        margin: 4% 0; }
+        #partnership-area .wrap .partnershipList .icon {
+          width: 12.5%;
+          padding-bottom: 12.5%;
+          -webkit-transition: 0.1s;
+          -o-transition: 0.1s;
+          transition: 0.1s;
+          cursor: pointer; }
+          #partnership-area .wrap .partnershipList .icon:hover {
+            opacity: 0.6; } }
+
+#media-area {
+  width: 100%;
+  background: #300002;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 8%;
+  margin: 0 0 12% 0;
+  z-index: 2; }
+  #media-area .triangleTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateY(-99%) rotateY(180deg);
+    transform: translateY(-99%) rotateY(180deg);
+    width: 100%;
+    height: 3rem;
+    z-index: 1;
+    fill: #300002; }
+  #media-area .triangleBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateY(99%) rotateX(180deg) rotateY(180deg);
+    transform: translateY(99%) rotateX(180deg) rotateY(180deg);
+    width: 100%;
+    height: 3rem;
+    z-index: 1;
+    fill: #300002; }
+  #media-area .marjorTitle {
+    color: #fff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 6% 0;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.125); }
+  #media-area .mediaList {
+    width: 100%;
+    font-size: 0;
+    padding-top: 10%;
+    letter-spacing: 0; }
+    #media-area .mediaList li {
+      width: 100%;
+      letter-spacing: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 8%; }
+      #media-area .mediaList li .title {
+        padding-bottom: 5%; }
+        #media-area .mediaList li .title span {
+          display: inline-block;
+          position: relative;
+          padding-bottom: 5%;
+          font-size: 0.8rem;
+          color: #fff;
+          font-family: Raleway, Helvetica, sans-serif;
+          font-weight: bold;
+          letter-spacing: 0.1rem;
+          line-height: 1.5; }
+          #media-area .mediaList li .title span::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            border-bottom: solid 2px rgba(255, 255, 255, 0.125); }
+      #media-area .mediaList li .content {
+        font-size: 0.8rem;
+        color: #fff;
+        line-height: 2; }
+        #media-area .mediaList li .content a {
+          display: inline;
+          color: #fff;
+          border-bottom: 1px dashed rgba(255, 255, 255, 0.125); }
+
+@media screen and (min-width: 768px) {
+  #media-area {
+    padding-bottom: 2%; }
+    #media-area .mediaList {
+      overflow-x: scroll;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch; }
+      #media-area .mediaList li {
+        display: inline-block;
+        vertical-align: top;
+        width: 47%;
+        height: 10rem;
+        padding: 4% 5% 0 5%;
+        margin-right: 5%;
+        margin-bottom: 2%;
+        white-space: normal;
+        background: #000;
+        overflow: hidden;
+        border-radius: 0.2rem; }
+        #media-area .mediaList li:last-child {
+          margin-right: 0; }
+        #media-area .mediaList li .title span {
+          display: block;
+          font-size: 0.6rem; }
+        #media-area .mediaList li .content {
+          font-size: 0.6rem; }
+    #media-area .mediaList::-webkit-scrollbar {
+      width: 1rem;
+      height: 0.6rem;
+      background: #443032; }
+    #media-area .mediaList::-webkit-scrollbar-thumb {
+      background: #141414;
+      border: 0; } }
+
+@media screen and (min-width: 1024px) {
+  #media-area {
+    margin: 0; }
+    #media-area .wrap {
+      max-width: 1200px;
+      margin: 0 auto; }
+      #media-area .wrap .marjorTitle {
+        padding: 3% 0; }
+      #media-area .wrap .mediaList {
+        padding-top: 3%; }
+        #media-area .wrap .mediaList li {
+          width: 30%;
+          margin-right: 4%;
+          height: 14rem; } }

@@ -1,0 +1,1951 @@
+@import './common/reset';
+@import './common/header';
+@import './common/footer';
+@import './common/animation';
+
+html {
+    background: #191919;
+    font-size: 16px;
+}
+@media screen and (min-width:768px){
+    html {
+        font-size: 20px;
+    }
+}
+
+// mainLogo-area
+#mainLogo-area {
+    width: 100%;
+    min-height: 100vh;
+    background: #191919;
+    position: relative;
+    top: 0;
+    box-sizing: border-box;
+    padding: 15% 8% 0 8%;
+    overflow-x: hidden;
+    text-align: center;
+    .logoIcon {
+        position: relative;
+        width: 45%;
+        padding-bottom: 45%;
+        margin: 0 auto;
+        animation: scaleIn 1.4s;
+        #insideIcon {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../img/logo_animation.png)no-repeat ;
+            background-size: 100%;
+            animation: logoAnimation 0.4s steps(23) infinite;
+            animation-play-state: paused;
+        }
+    }
+    .title {
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 6% 0;
+        border-bottom: 1px solid #656665;
+        animation: sliderFromLeft 0.6s;
+    }
+    .subtitle {
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        font-weight: 200;
+        line-height: 2;
+        padding: 4% 0;
+        animation: sliderFromLeft 0.8s;
+    }
+    .content {
+        animation: sliderFromLeft 1s;
+        span{
+            color: #656665;
+            font-size: 0.8rem;
+            font-weight: 200;
+            text-transform: none;
+            line-height: 2;
+            &.EN {
+                letter-spacing: 0;
+            }
+        }
+    }
+    .recognizedBy {
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        font-weight: 200;
+        line-height: 2;
+        padding: 4% 0;
+        animation: sliderFromLeft 1.2s;
+    }
+    .logoList {
+        width: 100%;
+        font-size: 0;
+        letter-spacing: 0;
+        animation: sliderFromLeft 1.2s;
+        .List {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 15%;
+            padding-bottom: 12%;
+            margin-right: 2%;
+            background: url(../../img/landingPageLogos.png)no-repeat;
+            background-size: 100%;
+            &:last-child{
+                margin-right: 0;
+            }
+            a {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            &.UCBerkeley {
+                background-position-y: ($LP-UCBerkeley/$LP-totalLogo)*100%;
+            }
+            &.SCFEAT {
+                background-position-y: ($LP-SCFEAT/$LP-totalLogo)*100%;
+            }
+            &.HKUOSAT {
+                background-position-y: ($LP-HKUOSAT/$LP-totalLogo)*100%;
+            }
+            &.JPMorgan {
+                background-position-y: ($LP-JPMorgan/$LP-totalLogo)*100%;
+            }
+            &.Binance {
+                background-position-y: ($LP-Binance/$LP-totalLogo)*100%;
+            }
+            &.MITTechnologyReview {
+                background-position-y: ($LP-MITTechnologyReview/$LP-totalLogo)*100%;
+            }
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width:1024px){
+    #mainLogo-area {
+        padding: 8.6% 8% 0 8%;
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            .logoIcon {
+                width: 23%;
+                padding-bottom: 23%;
+            }
+            .title {
+                padding: 3% 0;
+            }
+            .subtitle {
+                padding: 2% 0;
+            }
+            .recognizedBy {
+                padding: 4% 0 0 0;
+            }
+            .logoList {
+                .List {
+                    width: 10%;
+                    padding-bottom: 8%;
+                    margin-right: 3%;
+                    transition: 0.3s;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// portfolio-area
+#portfolio-area {
+    width: 100%;
+    background: #191919;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 8%;
+    .marjorTitle{
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 6% 0;
+        border-bottom: 1px solid #656665;
+    } 
+    .discript {
+        color: #fff;
+        letter-spacing: 0;
+        text-transform: none;
+        font-size: 0.9rem;
+        font-weight: 200;
+        line-height: 1.5;
+        padding: 6% 0;
+    }
+    // portfolio-list 
+    .portfolio-list{
+        font-size: 0;
+        letter-spacing: 0;
+        li {
+            display:inline-block;
+            vertical-align: top; 
+            width: 100%;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: #383848;
+            margin-bottom: 10%;
+            letter-spacing: 0.1rem;
+            .picture {
+                position: relative;
+                width: 100%;
+                padding-bottom: 50%;
+                overflow: hidden;
+                a{
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 101%;
+                    height: 101%;
+                    transform: translate(-50%,-50%)scale(1,1)rotate(0deg);
+                    background: url(../../img/portfolioPicture.jpg)no-repeat;
+                    background-size: 100%;
+                    transition: 0.5s;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+            }
+            // portfolio separate
+            &.selfToken{
+                .picture {
+                    a{
+                        background-position-y: ($P-selfToken-pic/$P-totalPorfolio)*100%;
+                    }
+                }
+            }
+            &.blackbirdAi {
+                .picture {
+                    a{
+                        background-position-y: ($P-blackbirdAi-pic/$P-totalPorfolio)*100%;
+                    }
+                }
+            }
+            &.VMFive {
+                .picture {
+                    a{
+                        background-position-y: ($P-VMFive-pic/$P-totalPorfolio)*100%;
+                    }
+                }
+            }
+            &.HongYingClub {
+                .picture {
+                    a{
+                        background-position-y: ($P-HongYingClub-pic/$P-totalPorfolio)*100%;
+                    }
+                }
+            }
+            .textArea {
+                box-sizing: border-box;
+                padding: 8% 5% 5% 5%;
+                li {
+                    color: #fff;
+                    font-size: 0.8rem;
+                    border-radius: unset;
+                    display: block;
+                    width: 100%;
+                    margin: 0;
+                    &.title{
+                        padding-bottom: 5%;
+                        border-bottom: 1px solid #656665;
+                        font-weight: bold;
+                        a{
+                            display: inline-block;
+                            color: #fff;
+                        }
+                    }
+                    &.content {
+                        letter-spacing: 0;
+                        line-height: 2;
+                        text-transform: none;
+                        font-weight: 200;
+                        padding:5% 0;
+                    }
+                    &.provided {
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+                            text-transform: none;
+                            letter-spacing: 0;
+                            font-size: 0.8;
+                            font-weight: bold;
+                        }
+                        .icon {
+                            display: inline-block;
+                            vertical-align: middle;
+                            position: relative;
+                            width: 10%;
+                            padding-bottom: 10%;
+                            border-radius: 50%;
+                            border: 2px solid #535561;
+                            margin-left: 2.5%;
+                            &:after{
+                                content: '';
+                                position: absolute;
+                                width: 50%;
+                                height: 50%;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                                z-index: 1;
+                                background: url(../../img/fontAwesomeIcon.png)no-repeat;
+                                background-size: 100%;
+                            }
+                            // icon separate
+                            &.shield{
+                                &:after{
+                                    background-position-y: ($shield-icon/$totalIcon) *100%
+                                }
+                            }
+                            &.bitcoin{
+                                &:after{
+                                    background-position-y: ($bitcoin-icon/$totalIcon) *100%
+                                }
+                            }
+                            &.graduation{
+                                &:after{
+                                    background-position-y: ($graduation-icon/$totalIcon) *100%
+                                }
+                            }
+                            &.book{
+                                &:after{
+                                    background-position-y: ($book-icon/$totalIcon) *100%
+                                }
+                            }
+                            &.database{
+                                &:after{
+                                    background-position-y: ($database-icon/$totalIcon) *100%
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width:1024px){
+    #portfolio-area {
+        padding-bottom: 4%;
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            .marjorTitle{
+                padding: 3% 0;
+            } 
+            .discript {
+                padding: 3% 0;
+            }
+            // portfolio-list 
+            .portfolio-list{
+                >li {
+                    width: 48%;
+                    margin-bottom: 4%;
+                    margin-right: 4%;
+                    transition: 0.3s;
+                    &:nth-child(2n){
+                        margin-right: 0;
+                    }
+                    &:hover {
+                        transform: scale(1.05,1.1)translateX(2%);
+                    }
+                    &:nth-child(2n) {
+                        &:hover {
+                            transform: scale(1.05,1.1)translateX(-2%);
+                        }
+                    }
+                    .picture {
+                        &:hover {
+                            a{
+                                transform: translate(-50%,-50%)scale(1.3,1.3);
+                            }
+                        }
+                    }
+                    .textArea {
+                        .provided {
+                            .icon {
+                                width: 7%;
+                                padding-bottom: 7%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// research-area
+#research-area {
+    width: 100%;
+    background: #300002;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 8%;
+    margin: 12% 0;
+    z-index: 3;
+    .triangleTop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-99%)rotateY(0deg);
+        width: 100%;
+        height: 3rem;
+        z-index: 1;
+        fill: #300002;
+    }
+    .triangleBottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(99%)rotateX(180deg)rotateY(180deg);
+        width: 100%;
+        height: 3rem;
+        z-index: 1;
+        fill: #300002;
+    }
+    .marjorTitle{
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 6% 0;
+        border-bottom: 1px solid #656665;
+    }
+    // list
+    .researchList {
+        font-size: 0;
+        width: 100%;
+        padding-top: 6%;
+        letter-spacing: 0;
+        li {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.3rem;
+            background: #fff;
+            margin-bottom: 8%;
+            letter-spacing: 0.1rem;
+            .img {
+                width: 100%;
+                padding-bottom: 50%;
+                position: relative;
+                overflow: hidden;
+                a {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 101%;
+                    height: 101%;
+                    transform: translate(-50%,-50%)scale(1,1)rotate(0deg);
+                    background: url(../../img/research-img.jpg)no-repeat;
+                    background-size: 100%;
+                    transition: 0.5s;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+            }
+            .textArea {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 6% 8%;
+                h3{
+                    font-family: Raleway, Helvetica, sans-serif;
+                    color: #000;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    line-height: 2;
+                }
+                p{
+                    color: #000;
+                    font-size: 0.8rem;
+                    text-transform: none;
+                    letter-spacing: 0;
+                    font-weight: 200;
+                    line-height: 2;
+                    overflow: hidden;
+                    height: 1.5rem;
+                    a {
+                        display: inline;
+                        cursor: pointer;
+                        color: #45558d;
+                        border-bottom: 1px dashed currentColor;
+                        &:hover {
+                            border-bottom: 1px dashed transparent;
+                        }
+                    }
+                }
+            }
+            .otherArea{
+                display: none;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0 8% 6% 8%;
+                letter-spacing: 0;
+                .PAtitle {
+                    color: #000;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    text-transform: none;
+                }
+                .iconList {
+                    padding-top: 5%;
+                    letter-spacing: 0;
+                    padding-bottom: 3%;
+                    &:last-child{
+                        padding-bottom: 0%;
+                    }
+                    .icon{
+                        display: inline-block;
+                        vertical-align: middle;
+                        position: relative;
+                        width: 16%;
+                        padding-bottom: 16%;
+                        border: 1px solid #bebebe;
+                        border-radius: 0.3rem;
+                        overflow: hidden;
+                        margin-right: 3%;
+                        margin-bottom: 2%;
+                        a {
+                            position: absolute;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: url(../../img/research-icons.png)no-repeat;
+                            background-size: 200%;
+                            transition: 0.3s;
+                            z-index: 1;
+                            cursor: pointer;
+                        }
+                        &:hover {
+                            a {
+                                opacity: 0.6;
+                            }
+                        }
+                        // icon separate
+                        &.binance {
+                            a{
+                                background-position-y: ($R-binance-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.gitcoin {
+                            a{
+                                background-position-y: ($R-gitcoin-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.ethereal {
+                            a{
+                                background-position-y: ($R-ethereal-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.ieee {
+                            a{
+                                background-position-y: ($R-ieee-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.HITC {
+                            a{
+                                background-position-y: ($R-HITC-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.todohacker {
+                            a{
+                                background-position-y: ($R-todohacker-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.dexon {
+                            a{
+                                background-position-y: ($R-dexon-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.bithub {
+                            a{
+                                background-position-y: ($R-bithub-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.alysida {
+                            a{
+                                background-position-y: ($R-alysida-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.ITRI {
+                            a{
+                                background-position-y: ($R-ITRI-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.III {
+                            a{
+                                background-position-y: ($R-III-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.NARlabs {
+                            a{
+                                background-position-y: ($R-NARlabs-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.berkeley {
+                            a{
+                                background-position-y: ($R-berkeley-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.THKUOSAT {
+                            a{
+                                background-position-y: ($R-THKUOSAT-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.NTU {
+                            a{
+                                background-position-y: ($R-NTU-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.taipeiTech {
+                            a{
+                                background-position-y: ($R-taipeiTech-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.NTUOB {
+                            a{
+                                background-position-y: ($R-NTUOB-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.JPMorgan {
+                            a{
+                                background-position-y: ($R-JPMorgan-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.htc {
+                            a{
+                                background-position-y: ($R-htc-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.TUOC {
+                            a{
+                                background-position-y: ($R-TUOC-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.selfToken {
+                            a{
+                                background-position-y: ($R-selfToken-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.ethereum {
+                            a{
+                                background-position-y: ($R-ethereum-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.consensys {
+                            a{
+                                background-position-y: ($R-consensys-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.liquality {
+                            a{
+                                background-position-y: ($R-liquality-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.tron {
+                            a{
+                                background-position-y: ($R-tron-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.trustCaffe {
+                            a{
+                                background-position-y: ($R-trustCaffe-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.EOS {
+                            a{
+                                background-position-y: ($R-EOS-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.meetOne {
+                            a{
+                                background-position-y: ($R-meetOne-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.slowMist {
+                            a{
+                                background-position-y: ($R-slowMist-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.wmfive {
+                            a{
+                                background-position-y: ($R-wmfive-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.acxel {
+                            a{
+                                background-position-y: ($R-acxel-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.EOSTaipei {
+                            a{
+                                background-position-y: ($R-EOSTaipei-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.trustWallet {
+                            a{
+                                background-position-y: ($R-trustWallet-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.accupass {
+                            a{
+                                background-position-y: ($R-accupass-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.bytepay {
+                            a{
+                                background-position-y: ($R-bytepay-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.bitRabbit {
+                            a{
+                                background-position-y: ($R-bitRabbit-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.IMTTR {
+                            a{
+                                background-position-y: ($R-IMTTR-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.IBM {
+                            a{
+                                background-position-y: ($R-IBM-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.AWGgovCloud {
+                            a{
+                                background-position-y: ($R-AWGgovCloud-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.wolfram {
+                            a{
+                                background-position-y: ($R-wolfram-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.shanghaiCBank {
+                            a{
+                                background-position-y: ($R-shanghaiCBank-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.BankOfshanghai {
+                            a{
+                                background-position-y: ($R-BankOfshanghai-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.HKMA {
+                            a{
+                                background-position-y: ($R-HKMA-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.shanghaisave {
+                            a{
+                                background-position-y: ($R-shanghaisave-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.cyberport {
+                            a{
+                                background-position-y: ($R-cyberport-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.hackernoon {
+                            a{
+                                background-position-y: ($R-hackernoon-icon/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                    }
+                }
+                .publicationsList {
+                    padding: 8% 0;
+                    letter-spacing: 0;
+                    text-align: center;
+                    .publication {
+                        display: inline-block;
+                        vertical-align: top;
+                        position: relative;
+                        width: 45%;
+                        box-sizing: border-box;
+                        margin: 0 2.5%;
+                        border: 1px solid #cdcdcd;
+                        border-radius: 0;
+                        overflow: hidden;
+                        .publicationLink {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                        &.cryblock2 {
+                            padding-bottom: 57%;
+                            .publicationLink{
+                                background: url(../../img/papers/cryblock2.png)no-repeat;
+                                background-size: 100%;
+                            }
+                        }
+                        &.cpe {
+                            padding-bottom: 57%;
+                            .publicationLink{
+                                background: url(../../img/papers/cpe.png)no-repeat;
+                                background-size: 100%;
+                            }
+                        }
+                        &.dappcon {
+                            padding-bottom: 57%;
+                            .publicationLink{
+                                background: url(../../img/papers/dappcon.png)no-repeat;
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                }
+                .awardsList {
+                    padding-top: 5%;
+                    letter-spacing: 0;
+                    .awards {
+                        width: 100%;
+                        margin-bottom: 5%;
+                        letter-spacing: 0;
+                        .flag{
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 15%;
+                            padding-bottom: 15%;
+                            background: url(../../img/research-icons.png)no-repeat;
+                            background-size: 200%;
+                            background-position-x: 100%;
+                        }
+                        .caption {
+                            display: inline-block;
+                            vertical-align: middle;
+                            box-sizing: border-box;
+                            width: 85%;
+                            padding-left: 3%;
+                            span {
+                                font-size: 0.8rem;
+                                font-weight: 200;
+                                text-transform: none;
+                                line-height: 1.5;
+                                &.title {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        // flag
+                        &.germany {
+                            .flag{
+                                background-position-y: ($R-germany-flag/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.korea {
+                            .flag{
+                                background-position-y: ($R-korea-flag/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.hongKong {
+                            .flag{
+                                background-position-y: ($R-hongKong-flag/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.USA {
+                            .flag{
+                                background-position-y: ($R-USA-flag/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                        &.china {
+                            .flag{
+                                background-position-y: ($R-china-flag/$R-researchtotalIcon)*100%;
+                            }
+                        }
+                    }
+                }
+            }
+            // img separate
+            &.tsskit{
+                .img {
+                    a{
+                        background-position-y: ($R-tsskit-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.SCH{
+                .img {
+                    a{
+                        background-position-y: ($R-SCH-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.ecouponEcosystem{
+                .img {
+                    a{
+                        background-position-y: ($R-ecouponEcosystem-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.ox1Academy{
+                .img {
+                    a{
+                        background-position-y: ($R-ox1Academy-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.RRR{
+                .img {
+                    a{
+                        background-position-y: ($R-RRR-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.atomicSwap{
+                .img {
+                    a{
+                        background-position-y: ($R-atomicSwap-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.cryptoBeauty{
+                .img {
+                    a{
+                        background-position-y: ($R-cryptoBeauty-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.dragonGatePoker{
+                .img {
+                    a{
+                        background-position-y: ($R-dragonGatePoker-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.slefToken{
+                .img {
+                    a{
+                        background-position-y: ($R-slefToken-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.blackbirdAi{
+                .img {
+                    a{
+                        background-position-y: ($R-blackbirdAi-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.AMLKYC{
+                .img {
+                    a{
+                        background-position-y: ($R-AMLKYC-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            &.SCV{
+                .img {
+                    a{
+                        background-position-y: ($R-SCV-img/$R-researchtotalImg)*100%;
+                    }
+                }
+            }
+            .seeMore {
+                width: 100%;
+                font-size: 0.8rem;
+                text-align: center;
+                color: #fff;
+                background: #515a79;
+                box-sizing: border-box;
+                padding: 3% 0;
+            }
+            &.open {
+                p {
+                    overflow: unset;
+                    height: unset;
+                }
+                .otherArea {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width:768px){
+    #research-area {
+        .researchList {
+            >li {
+                &.grid-item { 
+                    width: 47%;
+                    margin:0 1.5% 3% 1.5%;
+                }
+                transition: 0.3s;
+                .textArea {
+                    h3{
+                        line-height: 1.5;
+                    }
+                    p {
+                        overflow: unset;
+                        height: unset;
+                    }
+                }
+                .otherArea {
+                    display: block;
+                }
+                .seeMore {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    #research-area {
+        margin: 4% 0;
+        .triangleTop,.triangleBottom{
+            height: 5rem;
+        }
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            .marjorTitle {
+                padding: 3% 0;
+            }
+            .researchList {
+                padding-top: 3%;
+                position: relative;
+                >li {
+                    &.grid-item { 
+                        width: 31%; 
+                        margin: 0 1% 2.5% 1%;
+                    }
+                    &:hover {
+                        transform: scale(1.1,1.1);
+                        z-index: 99;
+                    }
+                    .img{
+                        &:hover {
+                            a{
+                                transform: translate(-50%,-50%)scale(1.3,1.3);
+                            }
+                        }
+                    }
+                    .otherArea {
+                        .iconList {
+                            .icon {
+                                width: 31%;
+                                padding-bottom: 31%;
+                                margin-right: 2%;
+                                &:nth-child(3n){
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// team-area
+#team-area {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    ul {
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding:20% 8% 8% 8%;
+        text-align: right;
+        font-size: 0;
+        &:nth-child(1){
+            padding-top: 8%;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+        // .triangleTop {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     transform: translateY(-99%);
+        //     width: 100%;
+        //     height: 3rem;
+        //     z-index: 1;
+        // }
+        .triangleBottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateY(99%)rotateX(180deg)rotateY(0deg);
+            width: 100%;
+            height: 3rem;
+            z-index: 1;
+        }
+        &:nth-child(2n){
+            text-align: left;
+            .triangleBottom {
+                transform: translateY(99%)rotateX(180deg)rotateY(180deg);
+            }
+        }
+        .img {
+            display: inline-block;
+            position: relative;
+            width: 50%;
+            padding-bottom: 50%;
+            border-radius: 50%;
+            background: url(../../img/team.jpg)no-repeat;
+            background-size: 100%;
+        }
+        .mainTitle {
+            color: #fff;
+            font-family: Raleway, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: 6% 0;
+            border-bottom: solid 2px rgba(#fff,0.125);
+        }
+        .subtitle {
+            color: #fff;
+            font-family: Raleway, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            padding: 5% 0;
+        }
+        .resume {
+            color: #fff;
+            letter-spacing: 0;
+            text-transform: none;
+            font-size: 0.8rem;
+            line-height: 2;
+        }
+        .link {
+            ol{
+                width: 100%;
+                padding-top: 3%;
+                .icon {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 7%;
+                    padding-bottom: 7%;
+                    margin-right: 4%;
+                    background: url(../../img/fontAwesomeIcon.png)no-repeat;
+                    background-size: 100%;
+                    a {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    &.home {
+                        background-position-y: ($home-icon/$totalIcon)*100%;
+                    }
+                    &.linkedin {
+                        background-position-y: ($linkedin-icon/$totalIcon)*100%;
+                    }
+                    &.medium {
+                        background-position-y: ($medium-icon/$totalIcon)*100%;
+                    }
+                    &.github {
+                        background-position-y: ($github-icon/$totalIcon)*100%;
+                    }
+                    &.book {
+                        background-position-y: ($book-icon/$totalIcon)*100%;
+                    }
+                    &.google {
+                        background-position-y: ($google-icon/$totalIcon)*100%;
+                    }
+                    &.facebook {
+                        background-position-y: ($facebook-icon/$totalIcon)*100%;
+                    }
+                }
+            }
+        }
+        &.jeff-hu {
+            .img {
+                background-position-y: ($T-jeff-hu/$T-totalTeamMember)*100%;
+            }
+            background:#191919;
+            .triangleBottom {
+                fill: #191919;
+            }
+        }
+        &.tina-lee {
+            .img {
+                background-position-y: ($T-tina-lee/$T-totalTeamMember)*100%;
+            }
+            background:#300002;
+            .triangleBottom {
+                fill: #300002;
+            }
+        }
+        &.ken-wong {
+            .img {
+                background-position-y: ($T-ken-wong/$T-totalTeamMember)*100%;
+            }
+            background:#353848;
+            .triangleBottom {
+                fill: #353848;
+            }
+        }
+        &.martin-shin {
+            .img {
+                background-position-y: ($T-martin-shin/$T-totalTeamMember)*100%;
+            }
+            background:#191919;
+            .triangleBottom {
+                fill: #191919;
+            }
+        }
+        &.andrew-goa {
+            .img {
+                background-position-y: ($T-andrew-goa/$T-totalTeamMember)*100%;
+            }
+            background:#353848;
+            .triangleBottom {
+                fill: #353848;
+            }
+        }
+        &.matthew-liu {
+            .img {
+                background-position-y: ($T-matthew-liu/$T-totalTeamMember)*100%;
+            }
+            background:#300002;
+            .triangleBottom {
+                fill: #300002;
+            }
+        }
+        &.chen-po {
+            .img {
+                background-position-y: ($T-chen-po/$T-totalTeamMember)*100%;
+            }
+            background:#191919;
+            .triangleBottom {
+                fill: #191919;
+            }
+        }
+        &.tom-lam {
+            .img {
+                background-position-y: ($T-tom-lam/$T-totalTeamMember)*100%;
+            }
+            background:#353848;
+            .triangleBottom {
+                fill: #353848;
+            }
+        }
+        &.jc-ko {
+            .img {
+                background-position-y: ($T-jc-ko/$T-totalTeamMember)*100%;
+            }
+            background:#191919;
+            .triangleBottom {
+                fill: #191919;
+            }
+        }
+        &.pan-hui {
+            .img {
+                background-position-y: ($T-pan-hui/$T-totalTeamMember)*100%;
+            }
+            background:#300002;
+            .triangleBottom {
+                fill: #300002;
+            }
+        }
+        &.roger-wu {
+            .img {
+                background-position-y: ($T-roger-wu/$T-totalTeamMember)*100%;
+            }
+            background:#353848;
+            .triangleBottom {
+                fill: #353848;
+            }
+        }
+        // teamExperience
+        &.teamExperience {
+            background:#f3f3f3;
+            .triangleBottom {
+                fill: #f3f3f3;
+            }
+            .marjorTitle {
+                color: #191919;
+                font-family: Raleway, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 1rem;
+                line-height: 1.5;
+                padding: 6% 0;
+                border-bottom: solid 2px rgba(#191919,0.125);
+            }
+            .TElist {
+                font-size: 0;
+                letter-spacing: 0;
+                text-align: left;
+                padding: 6% 0;
+                .TElogo {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 48%;
+                    padding-bottom: 19.2%;
+                    margin: 0 2% 2% 0;
+                    background: #00b8ff;
+                    background: url(../../img/teamExperience.png)no-repeat;
+                    background-size: 100%;
+                    &:nth-child(2n){
+                        margin: 0 0 2% 0;
+                    }
+                    &.JPMorgan {
+                        background-position-y: ($TE-JPMorgan/$TE-totalLogo)*100%;
+                    }
+                    &.intel {
+                        background-position-y: ($TE-intel/$TE-totalLogo)*100%;
+                    }
+                    &.microsoft {
+                        background-position-y: ($TE-microsoft/$TE-totalLogo)*100%;
+                    }
+                    &.pwc {
+                        background-position-y: ($TE-pwc/$TE-totalLogo)*100%;
+                    }
+                    &.ibm {
+                        background-position-y: ($TE-ibm/$TE-totalLogo)*100%;
+                    }
+                    &.hsbc {
+                        background-position-y: ($TE-hsbc/$TE-totalLogo)*100%;
+                    }
+                    &.hkedc {
+                        background-position-y: ($TE-hkedc/$TE-totalLogo)*100%;
+                    }
+                    &.didi {
+                        background-position-y: ($TE-didi/$TE-totalLogo)*100%;
+                    }
+                    &.appliedMaterials {
+                        background-position-y: ($TE-appliedMaterials/$TE-totalLogo)*100%;
+                    }
+                    &.AcademiaSinica {
+                        background-position-y: ($TE-AcademiaSinica/$TE-totalLogo)*100%;
+                    }
+                    &.stanfordUniversity {
+                        background-position-y: ($TE-stanfordUniversity/$TE-totalLogo)*100%;
+                    }
+                    &.berkeley {
+                        background-position-y: ($TE-berkeley/$TE-totalLogo)*100%;
+                    }
+                    &.HKUOSAT {
+                        background-position-y: ($TE-HKUOSAT/$TE-totalLogo)*100%;
+                    }
+                    &.UofChicago {
+                        background-position-y: ($TE-UofChicago/$TE-totalLogo)*100%;
+                    }
+                    &.tsinghuaUniversity {
+                        background-position-y: ($TE-tsinghuaUniversity/$TE-totalLogo)*100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width:768px){
+    #team-area {
+        ul {
+            &.teamExperience {
+                .TElist {
+                    text-align: center;
+                    .TElogo{
+                        width: 30%;
+                        padding-bottom: 12%;
+                        margin: 0 3.33333% 3.33333% 0;
+                        &:nth-child(2n) {
+                            margin: 0 3.33333% 3.33333% 0;
+                        }
+                        &:nth-child(3n) {
+                            margin: 0 0 3.33333% 0;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    #team-area {
+        ul {
+            .triangleBottom {
+                height: 5rem;
+            }
+            padding: 8% 8% 4% 8%;
+            &:nth-child(1){
+                padding-top: 4%;
+            }
+            .wrap {
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items:center;
+                .img {
+                    width: 30%;
+                    padding-bottom: 30%;
+                }
+                .text_group {
+                    width: 65%;
+                    text-align: right;
+                    margin-right: 5%;
+                    .mainTitle {
+                        padding-top: 0;
+                    }
+                }
+                .link {
+                    ol{
+                        .icon {
+                            width: 5%;
+                            padding-bottom: 5%;
+                            transition: 0.1s;
+                            &:hover {
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-child(2n){
+                .wrap {
+                    flex-direction: row;
+                    .text_group {
+                        text-align: left;
+                        margin-left: 5%;
+                        margin-right: 0;
+                    }
+                }
+            }
+            &.teamExperience {
+                .wrap {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    display: block;
+                    .marjorTitle {
+                        padding: 3% 0;
+                        text-align: center;
+                    }
+                    .TElist {
+                        padding: 3% 0;
+                        .TElogo{
+                            width: 18.4%;
+                            padding-bottom: 7.36%;
+                            margin-right: 2%;
+                            margin-bottom: 3%;
+                            &:nth-child(5n) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// partnership-area
+#partnership-area {
+    width: 100%;
+    background: #353848;
+    box-sizing: border-box; 
+    padding: 20% 8%;
+    .marjorTitle{
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 6% 0;
+        border-bottom: solid 2px rgba(#fff,0.125);
+    }
+    .partnershipList {
+        font-size: 0;
+        letter-spacing: 0;
+        margin: 8% 0;
+        .icon {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 33.33333%;
+            padding-bottom: 33.33333%;
+            background: url(../../img/partnership.png)no-repeat;
+            background-size: 200%;
+            a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            &.0x1Academy {
+                background-position-y: ($PS-1-0x1Academy/$PS-totalPS)*100%;
+            }
+            &.blockchainEN {
+                background-position-y: ($PS-1-blockchainEN/$PS-totalPS)*100%;
+            }
+            &.hahow {
+                background-position-y: ($PS-1-hahow/$PS-totalPS)*100%;
+            }
+            &.hackerNoon {
+                background-position-y: ($PS-1-hackerNoon/$PS-totalPS)*100%;
+            }
+            &.tibaMe {
+                background-position-y: ($PS-1-tibaMe/$PS-totalPS)*100%;
+            }
+            &.xMag {
+                background-position-y: ($PS-1-xMag/$PS-totalPS)*100%;
+            }
+            &.BlockTempo {
+                background-position-y: ($PS-1-BlockTempo/$PS-totalPS)*100%;
+            }
+            &.ETNet {
+                background-position-y: ($PS-1-ETNet/$PS-totalPS)*100%;
+            }
+            &.HITCON {
+                background-position-y: ($PS-1-HITCON/$PS-totalPS)*100%;
+            }
+            &.cyberportHK {
+                background-position-y: ($PS-1-cyberportHK/$PS-totalPS)*100%;
+            }
+            &.MITTechnologyReview {
+                background-position-y: ($PS-1-MITTechnologyReview/$PS-totalPS)*100%;
+            }
+            &.TaipeiEthereumMeetup {
+                background-position-y: ($PS-1-TaipeiEthereumMeetup/$PS-totalPS)*100%;
+            }
+            &.todoHacker {
+                background-position-y: ($PS-1-todoHacker/$PS-totalPS)*100%;
+            }
+            &.bithub {
+                background-position-y: ($PS-1-bithub/$PS-totalPS)*100%;
+            }
+            &.trustCaffe {
+                background-position-y: ($PS-1-trustCaffe/$PS-totalPS)*100%;
+            }
+            &.UPTOWNSeoul {
+                background-position-y: ($PS-1-UPTOWNSeoul/$PS-totalPS)*100%;
+            }
+            &.UPTOWNHK {
+                background-position-y: ($PS-1-UPTOWNHK/$PS-totalPS)*100%;
+            }
+            &.acer {
+                background-position-y: ($PS-1-acer/$PS-totalPS)*100%;
+            }
+            &.AWSGovCloud {
+                background-position-y: ($PS-1-AWSGovCloud/$PS-totalPS)*100%;
+            }
+            &.htc {
+                background-position-y: ($PS-1-htc/$PS-totalPS)*100%;
+            }
+            &.ibm {
+                background-position-y: ($PS-1-ibm/$PS-totalPS)*100%;
+            }
+            &.ieee {
+                background-position-y: ($PS-1-ieee/$PS-totalPS)*100%;
+            }
+            &.accupass {
+                background-position-y: ($PS-1-accupass/$PS-totalPS)*100%;
+            }
+            &.acxel {
+                background-position-y: ($PS-1-acxel/$PS-totalPS)*100%;
+            }
+            &.consenSys {
+                background-position-y: ($PS-1-consenSys/$PS-totalPS)*100%;
+            }
+            &.DEXON {
+                background-position-y: ($PS-1-DEXON/$PS-totalPS)*100%;
+            }
+            &.EOS {
+                background-position-y: ($PS-1-EOS/$PS-totalPS)*100%;
+            }
+            &.EthereumFoundation {
+                background-position-y: ($PS-1-EthereumFoundation/$PS-totalPS)*100%;
+            }
+            &.Flowchain {
+                background-position-y: ($PS-1-Flowchain/$PS-totalPS)*100%;
+            }
+            &.Gitcoin {
+                background-position-y: ($PS-1-Gitcoin/$PS-totalPS)*100%;
+            }
+            &.KeyXentic {
+                background-position-y: ($PS-1-KeyXentic/$PS-totalPS)*100%;
+            }
+            &.Liquality {
+                background-position-y: ($PS-1-Liquality/$PS-totalPS)*100%;
+            }
+            &.SlowMist {
+                background-position-y: ($PS-1-SlowMist/$PS-totalPS)*100%;
+            }
+            &.TronNetwork {
+                background-position-y: ($PS-1-TronNetwork/$PS-totalPS)*100%;
+            }
+            &.VMFIVE {
+                background-position-y: ($PS-1-VMFIVE/$PS-totalPS)*100%;
+            }
+            &.Alysida {
+                background-position-y: ($PS-1-Alysida/$PS-totalPS)*100%;
+            }
+            &.AnChain {
+                background-position-y: ($PS-1-AnChain/$PS-totalPS)*100%;
+            }
+            &.BlackbirdAI {
+                background-position-y: ($PS-1-BlackbirdAI/$PS-totalPS)*100%;
+            }
+            &.EOSTaipei {
+                background-position-y: ($PS-1-EOSTaipei/$PS-totalPS)*100%;
+            }
+            &.SelfToken {
+                background-position-y: ($PS-1-SelfToken/$PS-totalPS)*100%;
+            }
+            // list-2
+            &.GotooCo {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-GotooCo/$PS-totalPS)*100%;
+            }
+            &.BerkeleyBX {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-BerkeleyBX/$PS-totalPS)*100%;
+            }
+            &.HKUOSAT {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-HKUOSAT/$PS-totalPS)*100%;
+            }
+            &.NTU {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-NTU/$PS-totalPS)*100%;
+            }
+            &.NTHU {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-NTHU/$PS-totalPS)*100%;
+            }
+            &.UNC {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-UNC/$PS-totalPS)*100%;
+            }
+            &.NTUOTN {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-NTUOTN/$PS-totalPS)*100%;
+            }
+            &.NTUOB {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-NTUOB/$PS-totalPS)*100%;
+            }
+            &.SJSU {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-SJSU/$PS-totalPS)*100%;
+            }
+            &.SCFEAT {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-SCFEAT/$PS-totalPS)*100%;
+            }
+            &.UCBerkeley {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-UCBerkeley/$PS-totalPS)*100%;
+            }
+            &.UONLV {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-UONLV/$PS-totalPS)*100%;
+            }
+            &.UOChicago {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-UOChicago/$PS-totalPS)*100%;
+            }
+            &.HKMonetaryAuthority {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-HKMonetaryAuthority/$PS-totalPS)*100%;
+            }
+            &.IFII {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-IFII/$PS-totalPS)*100%;
+            }
+            &.ITRI {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-ITRI/$PS-totalPS)*100%;
+            }
+            &.NARlabs {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-NARlabs/$PS-totalPS)*100%;
+            }
+            &.Binance {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-Binance/$PS-totalPS)*100%;
+            }
+            &.BitRabbit {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-BitRabbit/$PS-totalPS)*100%;
+            }
+            &.BytePay {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-BytePay/$PS-totalPS)*100%;
+            }
+            &.meetOne {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-meetOne/$PS-totalPS)*100%;
+            }
+            &.trustWallet {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-trustWallet/$PS-totalPS)*100%;
+            }
+            &.JPMorgan {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-JPMorgan/$PS-totalPS)*100%;
+            }
+            &.shaghaiCB {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-shaghaiCB/$PS-totalPS)*100%;
+            }
+            &.bankOfShaghai {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-bankOfShaghai/$PS-totalPS)*100%;
+            }
+            &.theShaghaiCSB {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-theShaghaiCSB/$PS-totalPS)*100%;
+            }
+            &.hyhworld {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-hyhworld/$PS-totalPS)*100%;
+            }
+            &.BASF {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-BASF/$PS-totalPS)*100%;
+            }
+            &.wolframAlpha {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-wolframAlpha/$PS-totalPS)*100%;
+            }
+            &.hkctf {
+                background-position-x: $PS-row-2 *100%;
+                background-position-y: ($PS-2-hkctf/$PS-totalPS)*100%;
+            }
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width:768px){
+    #partnership-area {
+        width: 100%;
+        background: #353848;
+        box-sizing: border-box; 
+        padding: 20% 8%;
+        .partnershipList {
+            .icon {
+                width: 25%;
+                padding-bottom: 25%;
+            }
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    #partnership-area {
+        width: 100%;
+        background: #353848;
+        box-sizing: border-box; 
+        padding: 8%;
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            .marjorTitle {
+                padding: 4% 0;
+            }
+            .partnershipList {
+                margin: 4% 0;
+                .icon {
+                    width: 12.5%;
+                    padding-bottom: 12.5%;
+                    transition: 0.1s;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media-area
+#media-area {
+    width: 100%;
+    background: #300002;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 8%;
+    margin: 0 0 12% 0;
+    z-index: 2;
+    .triangleTop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-99%)rotateY(180deg);
+        width: 100%;
+        height: 3rem;
+        z-index: 1;
+        fill: #300002;
+    }
+    .triangleBottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(99%)rotateX(180deg)rotateY(180deg);
+        width: 100%;
+        height: 3rem;
+        z-index: 1;
+        fill: #300002;
+    }
+    .marjorTitle{
+        color: #fff;
+        font-family: Raleway, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 6% 0;
+        border-bottom: solid 2px rgba(#fff,0.125);
+    }
+    // mediaList
+    .mediaList {
+        width: 100%;
+        font-size: 0;
+        padding-top: 10%;
+        letter-spacing: 0;
+        li {
+            width: 100%;
+            letter-spacing: 0;
+            box-sizing: border-box;
+            padding: 8%;
+            .title {
+                padding-bottom: 5%;
+                span {
+                    display: inline-block;
+                    position: relative;
+                    padding-bottom: 5%;
+                    font-size: 0.8rem;
+                    color: #fff;
+                    font-family: Raleway, Helvetica, sans-serif;
+                    font-weight: bold;
+                    letter-spacing: 0.1rem;
+                    line-height: 1.5;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        bottom: 0;
+                        border-bottom: solid 2px rgba(#fff,0.125);
+                    }
+                }
+            }
+            .content {
+                font-size: 0.8rem;
+                color: #fff;
+                line-height: 2;
+                a {
+                    display: inline;
+                    color: #fff;
+                    border-bottom: 1px dashed rgba(#fff,0.125);
+                }
+            }
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width:768px){
+    #media-area {
+        padding-bottom: 2%;
+        // mediaList
+        .mediaList {
+            overflow-x: scroll;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                width: 47%;
+                height: 10rem;
+                padding: 4% 5% 0 5%;
+                margin-right: 5%;
+                margin-bottom: 2%;
+                white-space: normal;
+                background: #000;
+                overflow: hidden;
+                border-radius: 0.2rem;
+                &:last-child{
+                    margin-right: 0;
+                }
+                .title {
+                    span {
+                        display: block;
+                        font-size: 0.6rem;
+                    }
+                }
+                .content {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+        // scroll
+        .mediaList::-webkit-scrollbar{
+            width:1rem;
+            height:0.6rem;
+            background:#443032;
+        }
+        .mediaList::-webkit-scrollbar-thumb{
+            background: #141414;
+            border: 0;
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    #media-area {
+        margin: 0;
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            .marjorTitle {
+                padding: 3% 0;
+            }
+            .mediaList {
+                padding-top: 3%;
+                li {
+                    width: 30%;
+                    margin-right: 4%;
+                    height: 14rem;
+                }
+            }
+        }
+    }
+}
