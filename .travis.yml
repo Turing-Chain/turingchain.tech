@@ -1,0 +1,22 @@
+sudo: false
+language: node_js
+node_js:
+- '8.9.0'
+cache: yarn
+branches:
+  only:
+  - master
+notifications:
+  email: false
+  slack:
+    on_success: always
+script:
+- touch _CNAME
+- echo "turingchain.tech" > _CNAME
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
