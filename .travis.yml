@@ -11,8 +11,8 @@ notifications:
   slack:
     on_success: always
 script:
-- touch _CNAME
-- echo "turingchain.tech" > _CNAME
+- touch CNAME
+- echo "turingchain.tech" > CNAME
 deploy:
   provider: pages
   skip_cleanup: true
