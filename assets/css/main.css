@@ -2174,7 +2174,19 @@ html {
   background-position-y: 74.35897%;
 }
 #partnership-area .partnershipList .icon.biilabs {
-  background: white url(../../img/biilabs.svg) no-repeat center/97%;
+  background: white url(../../img/partners/biilabs.svg) no-repeat center/97%;
+}
+#partnership-area .partnershipList .icon.hsinchu {
+  background: white url(../../img/partners/logo-hsinchu.jpg) no-repeat center/contain;
+}
+#partnership-area .partnershipList .icon.min {
+  background: white url(../../img/partners/logo-min.png) no-repeat center/90%;
+}
+#partnership-area .partnershipList .icon.sin {
+  background: white url(../../img/partners/logo-sin.jpg) no-repeat center/80%;
+}
+#partnership-area .partnershipList .icon.taiwan-business {
+  background: white url(../../img/partners/logo-taiwan-business.png) no-repeat center/contain;
 }
 
 @media screen and (min-width: 768px) {
