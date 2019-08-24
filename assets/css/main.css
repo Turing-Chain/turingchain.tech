@@ -1654,22 +1654,22 @@ html {
   fill: #191919;
 }
 #team-area ul.andrew-goa {
-  background: #353848;
+  background: #300002;
 }
 #team-area ul.andrew-goa .img {
   background-position-y: 40%;
 }
 #team-area ul.andrew-goa .triangleBottom {
-  fill: #353848;
+  fill: #300002;
 }
 #team-area ul.matthew-liu {
-  background: #300002;
+  background: #353848;
 }
 #team-area ul.matthew-liu .img {
   background-position-y: 50%;
 }
 #team-area ul.matthew-liu .triangleBottom {
-  fill: #300002;
+  fill: #353848;
 }
 #team-area ul.chen-po {
   background: #191919;
@@ -1708,12 +1708,22 @@ html {
   fill: #300002;
 }
 #team-area ul.roger-wu {
-  background: #353848;
+  background: #300002;
 }
 #team-area ul.roger-wu .img {
   background-position-y: 100%;
 }
 #team-area ul.roger-wu .triangleBottom {
+  fill: #300002;
+}
+#team-area ul.ryan-lin {
+  background: #353848;
+}
+#team-area ul.ryan-lin .img {
+  filter: grayscale(1);
+  background: url(../../img/members/ryan-lin.jpg) no-repeat center/cover;
+}
+#team-area ul.ryan-lin .triangleBottom {
   fill: #353848;
 }
 #team-area ul.teamExperience {
